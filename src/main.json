@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/main",
+    "pages/discovery/main",
+    "pages/message/main",
+    "pages/my/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#C8C8C8",
+    "selectedColor": "#FF5243",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [{
+      "pagePath": "pages/index/main",
+      "text": "Ta宠",
+      "iconPath": "images/home.png",
+      "selectedIconPath": "images/home_active.png"
+    }, {
+      "pagePath": "pages/discovery/main",
+      "text": "发现",
+      "iconPath": "images/discovery.png",
+      "selectedIconPath": "images/discovery_active.png"
+    },{
+      "pagePath": "pages/message/main",
+      "text": "消息",
+      "iconPath": "images/msg.png",
+      "selectedIconPath": "images/msg_active.png"
+    },{
+      "pagePath": "pages/my/main",
+      "text": "我",
+      "iconPath": "images/my.png",
+      "selectedIconPath": "images/my_active.png"
+    }]
+  }
+}
