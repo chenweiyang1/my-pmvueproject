@@ -71,9 +71,7 @@ export default {
 </script>
 
 <style scoped>
-.usermotto{
-  background-image: url(../../images/home_active.png)
-}
+
 swiper{
   width: 750rpx;
   height: 900rpx;

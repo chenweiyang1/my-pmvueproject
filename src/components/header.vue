@@ -1,7 +1,8 @@
 <template>
     <div>
         <div class="header flex flex-row">
-            <img src="/static/images/headerbg_03.png"/>
+            <div class="headerbgbox"></div>
+            <!-- <img src="./icons/headerbg_03.png"/> -->
             <div class="back-btn" v-if="showBack"></div>
             <div class="flex1">{{title}}</div>
         </div>
@@ -30,7 +31,7 @@ export default {
     .back-btn{
         width: 30px;
         height: 100%;
-        background-image: url(../images/backIcon_03.png);
+        background-image: url(./icons/backIcon_03.png);
         background-repeat: no-repeat;
         background-size: 11px auto;
         background-position: 0px 35px;
@@ -49,6 +50,16 @@ export default {
         z-index: 9;
     }
     .header img{
+        width: 65px;
+        position: absolute;
+        bottom: 0;
+        left: 12px;
+        height: 45px;
+    }
+    .header .headerbgbox{
+        background-image: url(./icons/headerbg_03.png);
+        background-repeat: no-repeat;
+        background-size: 65px 45px;
         width: 65px;
         position: absolute;
         bottom: 0;
