@@ -3,7 +3,7 @@
     <v-header title="Ta宠" :showBack="false"></v-header>
     <view class='list'>
       <swiper class="swiper" previous-margin="55rpx" next-margin="44rpx" duration="500">
-        <block style="margin-right:44rpx;" v-for="(item, index) in movies" :index="index" :key="index">
+        <block v-for="(item, index) in movies" :index="index" :key="index">
           <swiper-item>
             <div class="pet-card">
               <div class="pic1">
