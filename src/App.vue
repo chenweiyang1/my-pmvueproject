@@ -13,8 +13,9 @@ export default {
 
 <style>
 view,text,input,textarea,button,
-label{
-  font-family: "Microsoft YaHei"
+label,swiper-item{
+  font-family: "Microsoft YaHei";
+  box-sizing: border-box;
 }
 page{
   background-color: #f6f5f5;

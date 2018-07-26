@@ -1,23 +1,54 @@
 <template>
-  <div class="container">
+  <div class="container index">
     <v-header title="Ta宠" :showBack="false"></v-header>
     <view class='list'>
-      <swiper class="swiper" previous-margin="140rpx" next-margin="140rpx" @change="swiperChange" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
-        <block v-for="(item, index) in movies" :index="index" :key="index">
+      <swiper class="swiper" previous-margin="55rpx" next-margin="44rpx" duration="500">
+        <block style="margin-right:44rpx;" v-for="(item, index) in movies" :index="index" :key="index">
           <swiper-item>
-            <p :class="swiperIndex == index ? 'active' : ''">fasdaa</p>
-            <!-- <image  src="../../images/discovery_active.png"></image> -->
+            <div class="pet-card">
+              <div class="pic1">
+                <image src="/static/images/pic_03.png" mode="widthFix"></image>
+              </div>
+              <div class="flex flex-row pic-s-wrap">
+                <div class="flex1 pic-s">
+                  <image src="/static/images/pic_06.png" mode="widthFix"></image>
+                </div>
+                <div class="flex1 pic-s">
+                  <image src="/static/images/pic_08.png" mode="widthFix"></image>
+                </div>
+              </div>
+              <div class="pet-info flex flex-row">
+                <div class="avatar-wrap">
+                  <image src="/static/images/pic_12.png" mode="widthFix"></image>
+                </div>
+                <div class="flex1 texts">
+                  <p class="pet-name">
+                    <span class="name">米粒儿</span>
+                    <span class="gender-status"><span class="boy"></span>未绝育</span>
+                  </p>
+                  <p class="signature">吃葡萄不吐葡萄皮儿</p>
+                </div>
+              </div>
+              <div class="pet-other-info flex flex-row">
+                <div class="flex1">
+                  <span class="icon birthday"></span>
+                  <span class="text">3岁</span>
+                </div>
+                <div class="flex1">
+                  <span class="icon aries"></span>
+                  <span class="text">白羊</span>
+                </div>
+                <div class="flex1">
+                  <span class="icon position"></span>
+                  <span class="text">同城</span>
+                </div>
+              </div>
+            </div>
           </swiper-item>
         </block>
       </swiper>
-    <!-- <swiper indicator-dots="{{true}}" autoplay="{{false}}" previous-margin="{{'140rpx'}}" next-margin="{{'140rpx'}}" bindchange="swiperChange">
-      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
-        <swiper-item>
-          <view>{{index}}</view>
-        </swiper-item>
-      </block>
-    </swiper> -->
-  </view>
+    </view>
+    <button plain class="add-my-pet">添加我的宠物</button>
   </div>
 </template>
 
@@ -30,7 +61,7 @@ export default {
     return {
       motto: 'Hello World',
       userInfo: {},
-      movies:3,
+      movies:30,
       swiperIndex: 0
     }
   },
@@ -73,21 +104,165 @@ export default {
 <style scoped>
 
 swiper{
-  width: 750rpx;
-  height: 900rpx;
+  width: 770rpx;
+  height: 740rpx;
+  padding-top: 42rpx;
 }
-swiper-item{
-  padding-top: 100rpx;
+.list{
+  width: 100%;
 }
-p{
-  width: 375rpx;
-  height: 667rpx;
+.list .swiper{
+  width: 100%;
+  height: 740rpx;
+}
+.list .swiper swiper-item{
+  
+  padding-right: 22rpx;
+}
+.list .swiper swiper-item .pet-card{
+  padding: 13px;
+  width: calc(100% - 10rpx);
+  margin-left: 10rpx;
+  position: relative;
+  top: 5px;
+  height: 720rpx;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow:0px 0px 10px rgba(242,65,30,0.16);
+  
+  /* margin-right: 22rpx; */
+}
+.list .swiper swiper-item .pet-card .pic1{
+  width: 100%;
+  height: 130px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.list .swiper swiper-item .pet-card .pic1 image{
+  width: 100%;
+}
+.list .swiper swiper-item .pet-card .pic-s-wrap{
+  width: 100%;
+  height: 90px;
+  justify-content: space-between;
+}
+.list .swiper swiper-item .pet-card .pic-s-wrap .pic-s{
+  /* flex: 0 0 250rpx; */
+  overflow: hidden;
+}
+.list .swiper swiper-item .pet-card .pic-s-wrap .pic-s:first-child{
+  padding-right: 5px;
+}
+.list .swiper swiper-item .pet-card .pic-s-wrap .pic-s:last-child{
+  padding-left: 5px;
+}
+.list .swiper swiper-item .pet-card .pic-s-wrap .pic-s image{
+  width: 100%;
+}
+.list .swiper swiper-item .pet-card .pet-info{
+  margin-top: 30rpx;
+  height: 110rpx;
+  border-bottom: 1rpx solid #F1F1F1;
+}
+.list .swiper swiper-item .pet-card .pet-info .avatar-wrap{
+  flex: 0 0 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.list .swiper swiper-item .pet-card .pet-info .avatar-wrap image{
+  width: 100%;
+}
+.list .swiper swiper-item .pet-card .pet-info .texts{
+  padding: 5rpx 0 0 16rpx;
+}
+.list .swiper swiper-item .pet-card .pet-info .texts .pet-name{
+  line-height: 30rpx;
+  font-size: 30rpx;
+  color: #1E1E1E;
+}
+.list .swiper swiper-item .pet-card .pet-info .texts .pet-name .name{
+  margin-right: 19rpx;
+}
+.list .swiper swiper-item .pet-card .pet-info .texts .pet-name .gender-status{
+  display: inline-block;
+  height: 30rpx;
+  padding: 0 14rpx;
+  padding-left: 32rpx;
+  border-radius: 15rpx;
+  background-color: #45B7FF;
+  color: #fff;
+  font-size: 22rpx;
+  position: relative;
+}
+.list .swiper swiper-item .pet-card .pet-info .texts .pet-name .gender-status span{
+  display: inline-block;
+  width: 16rpx;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16rpx auto;
   position: absolute;
-  left: 50%;
-  margin-left: -188rpx;
+  left: 15rpx;
 }
-p.active{
-  transform: scale(1.2);
-  transition:all .2s ease-in 0s;
+.list .swiper swiper-item .pet-card .pet-info .texts .pet-name .gender-status span.boy{
+  background-image: url(../../icons/boy_03.png);
+}
+.list .swiper swiper-item .pet-card .pet-info .texts .signature{
+  font-size: 28rpx;
+  margin-top: 5rpx;
+  color: #909090;
+}
+.list .swiper swiper-item .pet-card .pet-other-info{
+  margin-top: 30rpx;
+}
+.list .swiper swiper-item .pet-card .pet-other-info .flex1{
+  line-height: 28rpx;
+  font-size: 28rpx;
+  color: #1E1E1E;
+  text-align: center;
+}
+.list .swiper swiper-item .pet-card .pet-other-info .flex1 .icon{
+  display: inline-block;
+  width: 35rpx;
+  height: 28rpx;
+  vertical-align: middle;
+  position: relative;
+  bottom: 2rpx;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 5rpx;
+}
+.list .swiper swiper-item .pet-card .pet-other-info .flex1 .icon.birthday{
+  background-image: url(../../icons/birthday.png);
+  background-size: 34rpx auto;
+}
+.list .swiper swiper-item .pet-card .pet-other-info .flex1 .icon.aries{
+  background-image: url(../../icons/aries.png);
+  background-size: 22rpx auto;
+}
+.list .swiper swiper-item .pet-card .pet-other-info .flex1 .icon.position{
+  background-image: url(../../icons/position.png);
+  background-size: 24rpx auto;
+}
+.add-my-pet{
+  margin-top: 108rpx;
+  width: 562rpx;
+  height: 86rpx;
+  border-radius: 86rpx;
+  border: none;
+  line-height: 84rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 36rpx;
+  background: -webkit-linear-gradient(left, #FF4A46 , #FF603D); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #FF4A46, #FF603D); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #FF4A46, #FF603D); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #FF4A46 , #FF603D); /* 标准的语法 */
+  transition: all 0.15s;
+}
+.add-my-pet.button-hover{
+  box-shadow:0px 0px 18px rgba(255,75,70,0.3);
+  opacity: 0.9;
 }
 </style>

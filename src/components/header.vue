@@ -28,7 +28,7 @@ export default {
         background: -moz-linear-gradient(right, #FF4A46, #FF603D); /* Firefox 3.6 - 15 */
         background: linear-gradient(to right, #FF4A46 , #FF603D); /* 标准的语法 */
     }
-    .back-btn{
+    .header .back-btn{
         width: 30px;
         height: 100%;
         background-image: url(./icons/backIcon_03.png);
@@ -38,7 +38,7 @@ export default {
         position: relative;
         z-index: 9;
     }
-    .flex1{
+    .header .flex1{
         padding-right: 100px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -49,7 +49,7 @@ export default {
         position: relative;
         z-index: 9;
     }
-    .header img{
+    .header .header img{
         width: 65px;
         position: absolute;
         bottom: 0;
