@@ -1,0 +1,55 @@
+<import src="../../components/header.vue.wxml" />
+<template name="1059f164">
+  <view class="_div data-v-7c1ad2fa container index">
+    <template title="Ta宠" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
+    <view class="_view data-v-7c1ad2fa list">
+      <swiper class="_swiper data-v-7c1ad2fa swiper" previous-margin="55rpx" next-margin="44rpx" duration="500">
+        <block index="{{index}}" wx:key="index" key="{{index}}" wx:for="{{movies}}" wx:for-index="index" wx:for-item="item">
+          <swiper-item class="_swiper-item data-v-7c1ad2fa">
+            <view class="_div data-v-7c1ad2fa pet-card">
+              <view class="_div data-v-7c1ad2fa pic1">
+                <image src="/static/images/pic_03.png" mode="widthFix" class="_image data-v-7c1ad2fa"></image>
+              </view>
+              <view class="_div data-v-7c1ad2fa flex flex-row pic-s-wrap">
+                <view class="_div data-v-7c1ad2fa flex1 pic-s">
+                  <image src="/static/images/pic_06.png" mode="widthFix" class="_image data-v-7c1ad2fa"></image>
+                </view>
+                <view class="_div data-v-7c1ad2fa flex1 pic-s">
+                  <image src="/static/images/pic_08.png" mode="widthFix" class="_image data-v-7c1ad2fa"></image>
+                </view>
+              </view>
+              <view class="_div data-v-7c1ad2fa pet-info flex flex-row">
+                <view class="_div data-v-7c1ad2fa avatar-wrap">
+                  <image src="/static/images/pic_12.png" mode="widthFix" class="_image data-v-7c1ad2fa"></image>
+                </view>
+                <view class="_div data-v-7c1ad2fa flex1 texts">
+                  <view class="_p data-v-7c1ad2fa pet-name">
+                    <label class="_span data-v-7c1ad2fa name">米粒儿</label>
+                    <label class="_span data-v-7c1ad2fa gender-status">
+                      <label class="_span data-v-7c1ad2fa boy"></label>未绝育</label>
+                  </view>
+                  <view class="_p data-v-7c1ad2fa signature">吃葡萄不吐葡萄皮儿</view>
+                </view>
+              </view>
+              <view class="_div data-v-7c1ad2fa pet-other-info flex flex-row">
+                <view class="_div data-v-7c1ad2fa flex1">
+                  <label class="_span data-v-7c1ad2fa icon birthday"></label>
+                  <label class="_span data-v-7c1ad2fa text">3岁</label>
+                </view>
+                <view class="_div data-v-7c1ad2fa flex1">
+                  <label class="_span data-v-7c1ad2fa icon aries"></label>
+                  <label class="_span data-v-7c1ad2fa text">白羊</label>
+                </view>
+                <view class="_div data-v-7c1ad2fa flex1">
+                  <label class="_span data-v-7c1ad2fa icon position"></label>
+                  <label class="_span data-v-7c1ad2fa text">同城</label>
+                </view>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <button plain class="_button data-v-7c1ad2fa add-my-pet">添加我的宠物</button>
+  </view>
+</template>
