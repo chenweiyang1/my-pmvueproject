@@ -1,4 +1,5 @@
 <import src="../../components/header.vue.wxml" />
+<import src="../../components/petStatus.vue.wxml" />
 <template name="1059f164">
   <view class="_div data-v-7c1ad2fa container index">
     <template title="Ta宠" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
@@ -25,8 +26,7 @@
                 <view class="_div data-v-7c1ad2fa flex1 texts">
                   <view class="_p data-v-7c1ad2fa pet-name">
                     <label class="_span data-v-7c1ad2fa name">米粒儿</label>
-                    <label class="_span data-v-7c1ad2fa gender-status">
-                      <label class="_span data-v-7c1ad2fa boy"></label>未绝育</label>
+                    <template gender="0" data="{{...$root[$kk+'1-'+index], $root}}" is="36c2c07d"></template>
                   </view>
                   <view class="_p data-v-7c1ad2fa signature">吃葡萄不吐葡萄皮儿</view>
                 </view>

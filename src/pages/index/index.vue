@@ -3,7 +3,7 @@
     <v-header title="Ta宠" :showBack="false"></v-header>
     <view class='list'>
       <swiper class="swiper" previous-margin="55rpx" next-margin="44rpx" duration="500">
-        <block style="margin-right:44rpx;" v-for="(item, index) in movies" :index="index" :key="index">
+        <block v-for="(item, index) in movies" :index="index" :key="index">
           <swiper-item>
             <div class="pet-card">
               <div class="pic1">
@@ -24,7 +24,7 @@
                 <div class="flex1 texts">
                   <p class="pet-name">
                     <span class="name">米粒儿</span>
-                    <span class="gender-status"><span class="boy"></span>未绝育</span>
+                    <pet-status :isSterilization="true" gender=0 />
                   </p>
                   <p class="signature">吃葡萄不吐葡萄皮儿</p>
                 </div>
@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import card from '@/components/card'
+import petStatus from '@/components/petStatus'
 import header from '../../components/header'
 
 export default {
@@ -67,7 +67,7 @@ export default {
   },
 
   components: {
-    card,
+    petStatus,
     'vHeader': header
   },
 
@@ -184,7 +184,7 @@ swiper{
 .list .swiper swiper-item .pet-card .pet-info .texts .pet-name .name{
   margin-right: 19rpx;
 }
-.list .swiper swiper-item .pet-card .pet-info .texts .pet-name .gender-status{
+/* .list .swiper swiper-item .pet-card .pet-info .texts .pet-name .gender-status{
   display: inline-block;
   height: 30rpx;
   padding: 0 14rpx;
@@ -207,7 +207,7 @@ swiper{
 }
 .list .swiper swiper-item .pet-card .pet-info .texts .pet-name .gender-status span.boy{
   background-image: url(../../icons/boy_03.png);
-}
+} */
 .list .swiper swiper-item .pet-card .pet-info .texts .signature{
   font-size: 28rpx;
   margin-top: 5rpx;
