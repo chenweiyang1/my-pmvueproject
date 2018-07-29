@@ -5,6 +5,7 @@
       <swiper class="swiper" previous-margin="55rpx" next-margin="44rpx" duration="500">
         <block v-for="(item, index) in movies" :index="index" :key="index">
           <swiper-item>
+            <i-button type="primary">这是一个按钮</i-button>
             <div class="pet-card">
               <div class="pic1">
                 <image src="/static/images/pic_03.png" mode="widthFix"></image>

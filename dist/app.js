@@ -83,9 +83,6 @@ if (false) {(function () {
 /* 6 */,
 /* 7 */
 =======
-/* 7 */,
-/* 8 */
->>>>>>> 2face5cb798463b540e9cb644f4f01268b3d94c2
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

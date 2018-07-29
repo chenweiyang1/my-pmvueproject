@@ -1,8 +1,3 @@
-<<<<<<< HEAD
 <import src="../../components/card.vue.wxml" />
 <import src="../../components/header.vue.wxml" />
 <import src="../../components/petStatus.vue.wxml" />
-=======
-<import src="../../components/header.vue.wxml" />
-<import src="../../components/card.vue.wxml" />
->>>>>>> 2face5cb798463b540e9cb644f4f01268b3d94c2
