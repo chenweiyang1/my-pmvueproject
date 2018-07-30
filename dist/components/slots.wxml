@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 <import src="../../components/header.vue.wxml" />
-<import src="../../components/petStatus.vue.wxml" />
-<import src="../../components/card.vue.wxml" />
-=======
 <import src="../../components/card.vue.wxml" />
 <import src="../../components/header.vue.wxml" />
 <import src="../../components/petStatus.vue.wxml" />
->>>>>>> 18b7cde04cf9d44144be5613fbeaf9e8b599f43e

@@ -1,0 +1,52 @@
+<import src="../../components/header.vue.wxml" />
+<template name="aed7ae5c">
+  <view class="_div data-v-1964d892 container add-my-pet">
+    <template title="添加宠物" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
+    <view class="_div data-v-1964d892 add-card">
+      <view class="_div data-v-1964d892 big-img">
+        <image mode="widthFix" class="_image data-v-1964d892"></image>
+      </view>
+      <view class="_div data-v-1964d892 flex flex-row">
+        <view class="_div data-v-1964d892 flex1">
+          <view class="_div data-v-1964d892 small-img">
+            <image mode="widthFix" class="_image data-v-1964d892"></image>
+          </view>
+        </view>
+        <view class="_div data-v-1964d892 flex1">
+          <view class="_div data-v-1964d892 small-img">
+            <image mode="widthFix" class="_image data-v-1964d892"></image>
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-1964d892 inpunt-line">
+        <input type="text" value="{{petName}}" bindinput="handleProxy" placeholder="请输入宠物姓名" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_input data-v-1964d892" />
+      </view>
+      <view class="_div data-v-1964d892 gender-line">
+        <view class="_div data-v-1964d892 chek-option boy {{gender == 1 ? 'active' : ''}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+          <label class="_span data-v-1964d892 text">男</label>
+          <label class="_span data-v-1964d892 icon"></label>
+        </view>
+        <view class="_div data-v-1964d892 chek-option girl {{gender == 2 ? 'active' : ''}}" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+          <label class="_span data-v-1964d892 text">女</label>
+          <label class="_span data-v-1964d892 icon"></label>
+        </view>
+      </view>
+      <view class="_div data-v-1964d892 chose-birthday inpunt-line">
+        <picker mode="date" value="{{birthDate}}" bindchange="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}" class="_picker data-v-1964d892">
+          <view class="_view data-v-1964d892 picker-handle">
+            <label class="_span data-v-1964d892 placeholder" wx:if="{{birthDate==''}}">请选择Ta的生日</label>
+            <label wx:else class="_span data-v-1964d892">{{birthDate}}</label>
+          </view>
+        </picker>
+      </view>
+      <view class="_div data-v-1964d892 pet-is-sterilization">
+        <label class="_span data-v-1964d892 is-sterilization-option {{isSterilization ? '' : 'active'}}" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">未绝育</label>
+        <label class="_span data-v-1964d892 is-sterilization-option {{isSterilization ? 'active' : ''}}" bindtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}">已绝育</label>
+      </view>
+      <view class="_div data-v-1964d892 inpunt-line">
+        <input type="text" value="{{petDesc}}" bindinput="handleProxy" placeholder="输入Ta最可爱的一面" data-eventid="{{'6'}}" data-comkey="{{$k}}" class="_input data-v-1964d892" />
+      </view>
+    </view>
+    <button plain class="_button data-v-1964d892 confirm-add-pet" bindtap="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}">确认添加</button>
+  </view>
+</template>

@@ -2,8 +2,7 @@
     <div>
         <div class="header flex flex-row">
             <div class="headerbgbox"></div>
-            <!-- <img src="./icons/headerbg_03.png"/> -->
-            <div class="back-btn" v-if="showBack"></div>
+            <div class="back-btn" v-if="showBack" @click="wxBack"></div>
             <div class="flex1">{{title}}</div>
         </div>
     </div>
@@ -12,6 +11,11 @@
 <script>
 export default {
     props:['title','showBack'],
+    methods:{
+        wxBack(){
+            wx.navigateBack();
+        }
+    }
 }
 </script>
 
@@ -27,6 +31,7 @@ export default {
         background: -o-linear-gradient(right, #FF4A46, #FF603D); /* Opera 11.1 - 12.0 */
         background: -moz-linear-gradient(right, #FF4A46, #FF603D); /* Firefox 3.6 - 15 */
         background: linear-gradient(to right, #FF4A46 , #FF603D); /* 标准的语法 */
+        z-index: 9999;
     }
     .header .back-btn{
         width: 30px;

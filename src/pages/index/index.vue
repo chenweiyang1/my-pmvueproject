@@ -5,7 +5,6 @@
       <swiper class="swiper" previous-margin="55rpx" next-margin="44rpx" duration="500">
         <block v-for="(item, index) in movies" :index="index" :key="index">
           <swiper-item>
-            <i-button type="primary">这是一个按钮</i-button>
             <div class="pet-card">
               <div class="pic1">
                 <image src="/static/images/pic_03.png" mode="widthFix"></image>
@@ -49,7 +48,7 @@
         </block>
       </swiper>
     </view>
-    <button plain class="add-my-pet">添加我的宠物</button>
+    <button plain class="add-my-pet" @click="addPet">添加我的宠物</button>
   </div>
 </template>
 
@@ -73,8 +72,8 @@ export default {
   },
 
   methods: {
-    bindViewTap () {
-      const url = '../logs/main'
+    addPet () {
+      const url = '../addmypet/main'
       wx.navigateTo({ url })
     },
     getUserInfo () {

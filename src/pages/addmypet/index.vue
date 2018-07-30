@@ -1,5 +1,7 @@
 <template>
-    <div class="add-my-pet">
+    <div class="container add-my-pet">
+        <v-header title="添加宠物" :showBack="true"></v-header>
+
         <div class="add-card">
             <div class="big-img">
                 <image mode="widthFix"></image>
@@ -17,29 +19,224 @@
                 </div>
             </div>
             <div class="inpunt-line">
-                <input type="text" placeholder="请输入宠物姓名" />
+                <input type="text" v-model="petName" placeholder="请输入宠物姓名" />
             </div>
             <div class="gender-line">
-                <div class="chek-option boy">
-                    男
+                <div class="chek-option boy" @click="chooseGender(1)" :class="gender==1?'active':''">
+                    <span class="text">男</span>
                     <span class="icon"></span>
                 </div>
-                <div class="chek-option girl">
-                    女
+                <div class="chek-option girl" @click="chooseGender(2)" :class="gender==2?'active':''">
+                    <span class="text">女</span>
                     <span class="icon"></span>
                 </div>
             </div>
+            <div class="chose-birthday inpunt-line">
+                <picker mode="date" v-model="birthDate" @change="changeDate">
+                    <view class="picker-handle">
+                        <span class="placeholder" v-if="birthDate==''">请选择Ta的生日</span>
+                        <span v-else>{{birthDate}}</span>
+                    </view>
+                </picker>
+            </div>
+            <div class="pet-is-sterilization">
+                <span class="is-sterilization-option" :class="isSterilization?'':'active'" @click="isSterilization=false">未绝育</span>
+                <span class="is-sterilization-option" :class="isSterilization?'active':''" @click="isSterilization=true">已绝育</span>
+            </div>
+            <div class="inpunt-line">
+                <input type="text" v-model="petDesc" placeholder="输入Ta最可爱的一面" />
+            </div>
         </div>
+        <button plain class="confirm-add-pet" @click="confirmAdd">确认添加</button>
     </div>
 </template>
 
 <script>
+import header from '../../components/header';
+// import dateTimePicker from '../../utils/dateTimePicker';
+import dateFormat from '../../utils/index'
 export default {
-    
+    data(){
+        return{
+            petName: '',
+            gender: 1,
+            birthDate: '',
+            isSterilization: false,
+            petDesc: '',
+        }
+    },
+    components:{
+        'vHeader': header
+    },
+    beforeMount: function(){
+
+    },
+    methods:{
+        chooseGender(g){
+            this.gender = g;
+        },
+        changeDate(e){
+            this.birthDate = e.mp.detail.value;
+        },
+        confirmAdd(){
+            
+        }
+    }
 }
 </script>
 
-<style scoped>
-
+<style scoped lang=scss>
+.add-my-pet{
+    .add-card{
+        width: calc(100% - 65px);
+        background-color: #fff;
+        margin: 15px auto 0;
+        border-radius: 5px;
+        padding: 40rpx;
+        .big-img{
+            width: 100%;
+            height: 130px;
+            overflow: hidden;
+            background-color: #F1F1F1;
+            margin-bottom: 13rpx;
+            image{
+                width: 100%;
+            }
+        }
+        .flex.flex-row{
+            .flex1{
+                padding-right: 9rpx;
+                &:last-child{
+                    padding-right: 0;
+                    padding-left: 9rpx;
+                }
+                .small-img{
+                    width: 100%;
+                    height: 90px;
+                    background-color: #F1F1F1;
+                    overflow: hidden;
+                    image{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .inpunt-line{
+            width: 347rpx;
+            margin: auto;
+            margin-top: 26rpx;
+            line-height: 65rpx;
+            border-bottom: 1rpx solid #F1F1F1;
+            font-size: 14px;
+            text-align: center;
+            &.chose-birthday{
+                .placeholder{
+                    color: #808080;
+                }
+            }
+        }
+        .gender-line{
+            margin-top: 30rpx;
+            text-align: center;
+            .chek-option{
+                display: inline-block;
+                width: 122rpx;
+                height: 46rpx;
+                border-radius: 61rpx;
+                color: #909090;
+                text-align: center;
+                line-height: 46rpx;
+                font-size: 28rpx;
+                background-color: #EEEEEE;
+                .icon{
+                    display: inline-block;
+                    width: 16rpx;
+                    height: 46rpx;
+                    margin-left: 9rpx;
+                    background-repeat: no-repeat;
+                    background-size: 19rpx auto;
+                    background-position: center;
+                    line-height: 46rpx;
+                }
+                .text{
+                    display: inline-block;
+                    vertical-align: top;
+                }
+                &.boy{
+                    margin-right: 20rpx;
+                    transition: all 0.3s;
+                    .icon{
+                        transition: all 0.3s;
+                        background-image: url(../../icons/boy_gray_03.png);
+                    }
+                    &.active{
+                        background-color: #45B7FF;
+                        color: #fff;
+                        .icon{
+                            background-image: url(../../icons/boy_03.png);
+                        }
+                    }
+                }
+                &.girl{
+                    margin-left: 20rpx;
+                    transition: all 0.3s;
+                    .icon{
+                        transition: all 0.3s;
+                        background-image: url(../../icons/girl_gray_03.png);
+                    }
+                    &.active{
+                        background-color: #FB5895;
+                        color: #fff;
+                        .icon{
+                            background-image: url(../../icons/girl.png);
+                        }
+                    }
+                }
+            }
+        }
+        .pet-is-sterilization{
+            margin-top: 30rpx;
+            text-align: center;
+            .is-sterilization-option{
+                display: inline-block;
+                width: 122rpx;
+                height: 46rpx;
+                border-radius: 61rpx;
+                color: #909090;
+                text-align: center;
+                line-height: 46rpx;
+                font-size: 28rpx;
+                background-color: #EEEEEE;
+                margin-right: 20rpx;
+                transition: all 0.3s;
+                &:last-child{
+                    margin-right: 0;
+                    margin-left: 20rpx;
+                }
+                &.active{
+                    color: #fff;
+                    background: linear-gradient(to right, #FF4A46 , #FF603D); /* 标准的语法 */
+                }
+            }
+        }
+    }
+    .confirm-add-pet{
+        margin-top: 63rpx;
+        width: 562rpx;
+        height: 86rpx;
+        border-radius: 86rpx;
+        border: none;
+        line-height: 84rpx;
+        text-align: center;
+        color: #fff;
+        font-size: 36rpx;
+        background: linear-gradient(to right, #FF4A46 , #FF603D); /* 标准的语法 */
+        transition: all 0.15s;
+        &.button-hover{
+            box-shadow:0px 0px 18px rgba(255,75,70,0.3);
+            opacity: 0.9;
+        }
+    }
+}
 </style>
 

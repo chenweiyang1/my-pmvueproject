@@ -3,7 +3,8 @@
     "pages/index/main",
     "pages/discovery/main",
     "pages/message/main",
-    "pages/my/main"
+    "pages/my/main",
+    "pages/addmypet/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
