@@ -1,4 +1,4 @@
-<template name="42c41e19">
+<template name="6febfcc3">
   <view class="_div data-v-cc947c10 counter-warp">
     <view class="_p data-v-cc947c10">Vuex counter：{{ count }}</view>
     <view class="_p data-v-cc947c10">
