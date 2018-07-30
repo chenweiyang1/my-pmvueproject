@@ -26,7 +26,11 @@ app.$mount();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(7);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_1_1_1_mpvue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(7);
+>>>>>>> 18b7cde04cf9d44144be5613fbeaf9e8b599f43e
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return

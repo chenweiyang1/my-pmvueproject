@@ -1,4 +1,4 @@
-<template name="36c2c07d">
+<template name="82226c32">
   <view class="_div data-v-35486862 pet-status {{gender == 0 ? 'girl' : 'boy'}}">
     <label class="_span data-v-35486862"></label>{{isSterilization?'已绝育':'未绝育'}} </view>
 </template>
