@@ -23,7 +23,7 @@
   z-index: 9;
 }
 .header .flex1 {
-  padding-right: 200rpx;
+  padding-right: 60rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

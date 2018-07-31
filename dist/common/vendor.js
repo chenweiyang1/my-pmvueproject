@@ -1,4 +1,4 @@
-global.webpackJsonp([0],{
+global.webpackJsonp([1],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -5719,18 +5719,18 @@ return Vue$3;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
 
-/***/ 13:
+/***/ 12:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 14:
+/***/ 13:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5746,7 +5746,7 @@ return Vue$3;
 //
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    props: ['title', 'showBack'],
+    props: ['title', 'showBack', 'align', 'vClass'],
     methods: {
         wxBack: function wxBack() {
             wx.navigateBack();
@@ -5756,13 +5756,14 @@ return Vue$3;
 
 /***/ }),
 
-/***/ 15:
+/***/ 14:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', {
-    staticClass: "header flex flex-row"
+    staticClass: "header flex flex-row",
+    class: _vm.vClass
   }, [_c('div', {
     staticClass: "headerbgbox"
   }), _vm._v(" "), (_vm.showBack) ? _c('div', {
@@ -5774,7 +5775,8 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       "click": _vm.wxBack
     }
   }) : _vm._e(), _vm._v(" "), _c('div', {
-    staticClass: "flex1"
+    staticClass: "flex1",
+    style: ('text-align: ' + _vm.align)
   }, [_vm._v(_vm._s(_vm.title))])])])
 }
 var staticRenderFns = []
@@ -5794,12 +5796,12 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_script_index_0_header_vue__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_template_compiler_index_id_data_v_dd5f26c2_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_template_index_0_header_vue__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_script_index_0_header_vue__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_template_compiler_index_id_data_v_dd5f26c2_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_template_index_0_header_vue__ = __webpack_require__(14);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(13)
+  __webpack_require__(12)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -5844,39 +5846,7 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 3:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = formatTime;
-function formatNumber(n) {
-  var str = n.toString();
-  return str[1] ? str : '0' + str;
-}
-
-function formatTime(date) {
-  var year = date.getFullYear();
-  var month = date.getMonth() + 1;
-  var day = date.getDate();
-
-  var hour = date.getHours();
-  var minute = date.getMinutes();
-  var second = date.getSeconds();
-
-  var t1 = [year, month, day].map(formatNumber).join('-');
-  var t2 = [hour, minute, second].map(formatNumber).join(':');
-
-  return '' + t1;
-}
-
-/* unused harmony default export */ var _unused_webpack_default_export = ({
-  formatNumber: formatNumber,
-  formatTime: formatTime
-});
-
-/***/ }),
-
-/***/ 40:
+/***/ 36:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6822,7 +6792,35 @@ var index_esm = {
 
 /***/ }),
 
-/***/ 48:
+/***/ 4:
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ 44:
 /***/ (function(module, exports) {
 
 /*
@@ -6905,13 +6903,13 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ 49:
+/***/ 45:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (immutable) */ __webpack_exports__["default"] = addStylesClient;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__listToStyles__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__listToStyles__ = __webpack_require__(46);
 /*
   MIT License http://www.opensource.org/licenses/mit-license.php
   Author Tobias Koppers @sokra
@@ -7138,35 +7136,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 5:
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-
-/***/ 50:
+/***/ 46:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7202,7 +7172,7 @@ function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 52:
+/***/ 48:
 /***/ (function(module, exports) {
 
 module.exports = function escape(url) {

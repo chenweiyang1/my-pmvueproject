@@ -1,6 +1,6 @@
 require("../../common/manifest.js");
 require("../../common/vendor.js");
-global.webpackJsonp([5],[
+global.webpackJsonp([3],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -9,15 +9,14 @@ global.webpackJsonp([5],[
 /* 5 */,
 /* 6 */,
 /* 7 */,
-/* 8 */,
-/* 9 */
+/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(9);
 
 
 
@@ -25,16 +24,16 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 app.$mount();
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_template_compiler_index_id_data_v_1964d892_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(16);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(11)
+  __webpack_require__(10)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -78,18 +77,18 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_header__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_index__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_index__ = __webpack_require__(15);
 //
 //
 //
@@ -145,7 +144,6 @@ if (false) {(function () {
 //
 
 
-// import dateTimePicker from '../../utils/dateTimePicker';
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     data: function data() {
@@ -174,9 +172,40 @@ if (false) {(function () {
 });
 
 /***/ }),
+/* 12 */,
 /* 13 */,
 /* 14 */,
-/* 15 */,
+/* 15 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export formatTime */
+function formatNumber(n) {
+  var str = n.toString();
+  return str[1] ? str : '0' + str;
+}
+
+function formatTime(date) {
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+
+  var hour = date.getHours();
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+
+  var t1 = [year, month, day].map(formatNumber).join('-');
+  var t2 = [hour, minute, second].map(formatNumber).join(':');
+
+  return '' + t1;
+}
+
+/* unused harmony default export */ var _unused_webpack_default_export = ({
+  formatNumber: formatNumber,
+  formatTime: formatTime
+});
+
+/***/ }),
 /* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -187,6 +216,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   }, [_c('v-header', {
     attrs: {
       "title": "添加宠物",
+      "align": "center",
       "showBack": true,
       "mpcomid": '0'
     }
@@ -366,5 +396,5 @@ if (false) {
 }
 
 /***/ })
-],[9]);
+],[8]);
 //# sourceMappingURL=main.js.map

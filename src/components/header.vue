@@ -1,16 +1,16 @@
 <template>
     <div>
-        <div class="header flex flex-row">
+        <div class="header flex flex-row" :class="vClass">
             <div class="headerbgbox"></div>
             <div class="back-btn" v-if="showBack" @click="wxBack"></div>
-            <div class="flex1">{{title}}</div>
+            <div class="flex1" :style="'text-align: '+align">{{title}}</div>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    props:['title','showBack'],
+    props:['title','showBack','align','vClass'],
     methods:{
         wxBack(){
             wx.navigateBack();
@@ -44,7 +44,7 @@ export default {
         z-index: 9;
     }
     .header .flex1{
-        padding-right: 100px;
+        padding-right: 30px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;

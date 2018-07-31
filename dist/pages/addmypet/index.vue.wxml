@@ -1,7 +1,7 @@
 <import src="../../components/header.vue.wxml" />
 <template name="aed7ae5c">
   <view class="_div data-v-1964d892 container add-my-pet">
-    <template title="添加宠物" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
+    <template title="添加宠物" align="center" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
     <view class="_div data-v-1964d892 add-card">
       <view class="_div data-v-1964d892 big-img">
         <image mode="widthFix" class="_image data-v-1964d892"></image>

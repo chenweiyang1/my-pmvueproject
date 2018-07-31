@@ -1,6 +1,6 @@
 <template>
   <div class="container index">
-    <v-header title="Ta宠" :showBack="false"></v-header>
+    <v-header title="Ta宠" align="center" :showBack="false"></v-header>
     <view class='list'>
       <swiper class="swiper" previous-margin="55rpx" next-margin="44rpx" duration="500">
         <block v-for="(item, index) in movies" :index="index" :key="index">

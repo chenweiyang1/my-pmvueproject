@@ -1,9 +1,139 @@
-<import src="../../components/card.vue.wxml" />
+<import src="../../components/header.vue.wxml" />
 <template name="c8ea00a8">
-  <view class="_div data-v-396d0a3e">
-    <view class="_ul data-v-396d0a3e container log-list">
-      <view wx:key="index" key="{{index}}" class="_li data-v-396d0a3e log-item {{[aa ? 'red' : '']}}" wx:for="{{logs}}" wx:for-index="index" wx:for-item="log">
-        <template data="{{...$root[$kk+'0-'+index], $root}}" is="324b98b4"></template>
+  <view class="_div data-v-396d0a3e container discovery">
+    <template vClass="img-move-bottom" title="Ta宠" align="left" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
+    <view class="_div data-v-396d0a3e top-tab">
+      <view class="_div data-v-396d0a3e menu-wrap flex flex-row">
+        <label class="_span data-v-396d0a3e items flex1 {{tabType == 1 ? 'active' : ''}}" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">精选</label>
+        <label class="_span data-v-396d0a3e items flex1 {{tabType == 2 ? 'active' : ''}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">关注</label>
+      </view>
+    </view>
+    <view class="_div data-v-396d0a3e list">
+      <view class="_div data-v-396d0a3e list-card">
+        <view class="_div data-v-396d0a3e user flex flex-row">
+          <view class="_div data-v-396d0a3e avatar">
+            <image src="/static/images/pic_12.png" mode="widthFix" class="_img data-v-396d0a3e"></image>
+          </view>
+          <view class="_div data-v-396d0a3e user-info flex1">
+            <view class="_p data-v-396d0a3e user-name">
+              <label class="_span data-v-396d0a3e owner-name">李小七/</label>
+              <label class="_span data-v-396d0a3e pet-name">米粒儿</label>
+            </view>
+            <view class="_p data-v-396d0a3e signature">吃葡萄不吐葡萄皮儿</view>
+          </view>
+          <view class="_div data-v-396d0a3e attention-status">
+            <label class="_span data-v-396d0a3e icon"></label>
+            <label class="_span data-v-396d0a3e text">关注</label>
+          </view>
+        </view>
+        <view class="_div data-v-396d0a3e card-content">
+          <view class="_div data-v-396d0a3e image-wrap flex flex-row single">
+            <view class="_div data-v-396d0a3e image">
+              <image src="/static/images/discovery_03.png" mode="widthFix" class="_img data-v-396d0a3e"></image>
+            </view>
+          </view>
+          <view class="_div data-v-396d0a3e text-wrap">今天米修被我领回家啦！一只双子座的狗狗哦！刚满月几天。</view>
+        </view>
+        <view class="_div data-v-396d0a3e flex flex-row card-actions">
+          <view class="_div data-v-396d0a3e praise">
+            <label class="_span data-v-396d0a3e icon"></label>
+            <label class="_span data-v-396d0a3e number">116</label>
+          </view>
+          <view class="_div data-v-396d0a3e comment">
+            <label class="_span data-v-396d0a3e icon"></label>
+            <label class="_span data-v-396d0a3e number">18</label>
+          </view>
+          <view class="_div data-v-396d0a3e share">
+            <label class="_span data-v-396d0a3e icon"></label>
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-396d0a3e list-card">
+        <view class="_div data-v-396d0a3e user flex flex-row">
+          <view class="_div data-v-396d0a3e avatar">
+            <image src="/static/images/pic_12.png" mode="widthFix" class="_img data-v-396d0a3e"></image>
+          </view>
+          <view class="_div data-v-396d0a3e user-info flex1">
+            <view class="_p data-v-396d0a3e user-name">
+              <label class="_span data-v-396d0a3e owner-name">李小七/</label>
+              <label class="_span data-v-396d0a3e pet-name">米粒儿</label>
+            </view>
+            <view class="_p data-v-396d0a3e signature">吃葡萄不吐葡萄皮儿</view>
+          </view>
+          <view class="_div data-v-396d0a3e attention-status">
+            <label class="_span data-v-396d0a3e icon"></label>
+            <label class="_span data-v-396d0a3e text">关注</label>
+          </view>
+        </view>
+        <view class="_div data-v-396d0a3e card-content">
+          <view class="_div data-v-396d0a3e image-wrap flex flex-row double">
+            <view class="_div data-v-396d0a3e image">
+              <image src="/static/images/discovery_21.png" mode="widthFix" class="_img data-v-396d0a3e"></image>
+            </view>
+            <view class="_div data-v-396d0a3e image">
+              <image src="/static/images/discovery_23.png" mode="widthFix" class="_img data-v-396d0a3e"></image>
+            </view>
+          </view>
+          <view class="_div data-v-396d0a3e text-wrap">今天米修被我领回家啦！一只双子座的狗狗哦！刚满月几天。</view>
+        </view>
+        <view class="_div data-v-396d0a3e flex flex-row card-actions">
+          <view class="_div data-v-396d0a3e praise liked">
+            <label class="_span data-v-396d0a3e icon"></label>
+            <label class="_span data-v-396d0a3e number">116</label>
+          </view>
+          <view class="_div data-v-396d0a3e comment">
+            <label class="_span data-v-396d0a3e icon"></label>
+            <label class="_span data-v-396d0a3e number">18</label>
+          </view>
+          <view class="_div data-v-396d0a3e share">
+            <label class="_span data-v-396d0a3e icon"></label>
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-396d0a3e list-card">
+        <view class="_div data-v-396d0a3e user flex flex-row">
+          <view class="_div data-v-396d0a3e avatar">
+            <image src="/static/images/pic_12.png" mode="widthFix" class="_img data-v-396d0a3e"></image>
+          </view>
+          <view class="_div data-v-396d0a3e user-info flex1">
+            <view class="_p data-v-396d0a3e user-name">
+              <label class="_span data-v-396d0a3e owner-name">李小七/</label>
+              <label class="_span data-v-396d0a3e pet-name">米粒儿</label>
+            </view>
+            <view class="_p data-v-396d0a3e signature">吃葡萄不吐葡萄皮儿</view>
+          </view>
+          <view class="_div data-v-396d0a3e attention-status followed">
+            <label class="_span data-v-396d0a3e icon"></label>
+            <label class="_span data-v-396d0a3e text">已关注</label>
+          </view>
+        </view>
+        <view class="_div data-v-396d0a3e card-content">
+          <view class="_div data-v-396d0a3e image-wrap flex flex-row three">
+            <view class="_div data-v-396d0a3e image">
+              <image src="/static/images/discovery_31.png" mode="widthFix" class="_img data-v-396d0a3e"></image>
+            </view>
+            <view class="_div data-v-396d0a3e image">
+              <image src="/static/images/discovery_33.png" mode="widthFix" class="_img data-v-396d0a3e"></image>
+            </view>
+            <view class="_div data-v-396d0a3e image">
+              <image src="/static/images/discovery_35.png" mode="widthFix" class="_img data-v-396d0a3e"></image>
+            </view>
+          </view>
+          <view class="_div data-v-396d0a3e text-wrap">今天米修被我领回家啦！一只双子座的狗狗哦！刚满月几天。</view>
+        </view>
+        <view class="_div data-v-396d0a3e flex flex-row card-actions">
+          <view class="_div data-v-396d0a3e praise liked">
+            <label class="_span data-v-396d0a3e icon"></label>
+            <label class="_span data-v-396d0a3e number">116</label>
+          </view>
+          <view class="_div data-v-396d0a3e comment">
+            <label class="_span data-v-396d0a3e icon"></label>
+            <label class="_span data-v-396d0a3e number">18</label>
+          </view>
+          <view class="_div data-v-396d0a3e share">
+            <label class="_span data-v-396d0a3e icon"></label>
+          </view>
+        </view>
       </view>
     </view>
   </view>

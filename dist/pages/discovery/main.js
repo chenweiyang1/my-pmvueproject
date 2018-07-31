@@ -1,24 +1,8 @@
 require("../../common/manifest.js");
 require("../../common/vendor.js");
-global.webpackJsonp([2],[
-/* 0 */,
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */
+global.webpackJsonp([5],{
+
+/***/ 17:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33,12 +17,13 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 app.$mount();
 
 /***/ }),
-/* 18 */
+
+/***/ 18:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_template_compiler_index_id_data_v_396d0a3e_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_template_compiler_index_id_data_v_396d0a3e_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(21);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -86,18 +71,19 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 19 */
+
+/***/ 19:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 20 */
+
+/***/ 20:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_index__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_card__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_header__ = __webpack_require__(2);
 //
 //
 //
@@ -108,150 +94,428 @@ if (false) {(function () {
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  components: {
-    card: __WEBPACK_IMPORTED_MODULE_1__components_card__["a" /* default */]
-  },
-
   data: function data() {
     return {
-      logs: []
+      tabType: 1
     };
   },
-  created: function created() {
-    var logs = wx.getStorageSync('logs') || [];
-    this.logs = logs.map(function (log) {
-      return Object(__WEBPACK_IMPORTED_MODULE_0__utils_index__["a" /* formatTime */])(new Date(log));
-    });
+
+  components: {
+    'vHeader': __WEBPACK_IMPORTED_MODULE_0__components_header__["a" /* default */]
+  },
+  created: function created() {},
+
+  methods: {
+    tabClick: function tabClick(i) {
+      this.tabType = i;
+      //loadData()
+    }
   }
 });
 
 /***/ }),
-/* 21 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_script_index_0_card_vue__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_template_compiler_index_id_data_v_00894222_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_template_index_0_card_vue__ = __webpack_require__(24);
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(22)
-}
-var normalizeComponent = __webpack_require__(0)
-/* script */
-
-/* template */
-
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_script_index_0_card_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_template_compiler_index_id_data_v_00894222_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_template_index_0_card_vue__["a" /* default */],
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "src\\components\\card.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] card.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-00894222", Component.options)
-  } else {
-    hotAPI.reload("data-v-00894222", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
-
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 23 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  props: ['text']
-});
-
-/***/ }),
-/* 24 */
+/***/ 21:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('p', {
-    staticClass: "card"
-  }, [_vm._v("\n    " + _vm._s(_vm.text) + "\n  ")])], 1)
-}
-var staticRenderFns = []
-render._withStripped = true
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-00894222", esExports)
-  }
-}
-
-/***/ }),
-/* 25 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('ul', {
-    staticClass: "container log-list"
-  }, _vm._l((_vm.logs), function(log, index) {
-    return _c('li', {
-      key: index,
-      staticClass: "log-item",
-      class: {
-        red: _vm.aa
+  return _c('div', {
+    staticClass: "container discovery"
+  }, [_c('v-header', {
+    attrs: {
+      "vClass": "img-move-bottom",
+      "title": "Ta宠",
+      "align": "left",
+      "showBack": false,
+      "mpcomid": '0'
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "top-tab"
+  }, [_c('div', {
+    staticClass: "menu-wrap flex flex-row"
+  }, [_c('span', {
+    staticClass: "items flex1",
+    class: _vm.tabType == 1 ? 'active' : '',
+    attrs: {
+      "eventid": '0'
+    },
+    on: {
+      "click": function($event) {
+        _vm.tabClick(1)
       }
-    }, [_c('card', {
-      attrs: {
-        "text": (index + 1) + ' . ' + log,
-        "mpcomid": '0-' + index
+    }
+  }, [_vm._v("精选")]), _vm._v(" "), _c('span', {
+    staticClass: "items flex1",
+    class: _vm.tabType == 2 ? 'active' : '',
+    attrs: {
+      "eventid": '1'
+    },
+    on: {
+      "click": function($event) {
+        _vm.tabClick(2)
       }
-    })], 1)
-  }))], 1)
+    }
+  }, [_vm._v("关注")])])]), _vm._v(" "), _c('div', {
+    staticClass: "list"
+  }, [_c('div', {
+    staticClass: "list-card"
+  }, [_c('div', {
+    staticClass: "user flex flex-row"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "user-info flex1"
+  }, [_c('p', {
+    staticClass: "user-name"
+  }, [_c('span', {
+    staticClass: "owner-name"
+  }, [_vm._v("李小七/")]), _vm._v(" "), _c('span', {
+    staticClass: "pet-name"
+  }, [_vm._v("米粒儿")])]), _vm._v(" "), _c('p', {
+    staticClass: "signature"
+  }, [_vm._v("吃葡萄不吐葡萄皮儿")])], 1), _vm._v(" "), _vm._m(1)]), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3)]), _vm._v(" "), _c('div', {
+    staticClass: "list-card"
+  }, [_c('div', {
+    staticClass: "user flex flex-row"
+  }, [_vm._m(4), _vm._v(" "), _c('div', {
+    staticClass: "user-info flex1"
+  }, [_c('p', {
+    staticClass: "user-name"
+  }, [_c('span', {
+    staticClass: "owner-name"
+  }, [_vm._v("李小七/")]), _vm._v(" "), _c('span', {
+    staticClass: "pet-name"
+  }, [_vm._v("米粒儿")])]), _vm._v(" "), _c('p', {
+    staticClass: "signature"
+  }, [_vm._v("吃葡萄不吐葡萄皮儿")])], 1), _vm._v(" "), _vm._m(5)]), _vm._v(" "), _vm._m(6), _vm._v(" "), _vm._m(7)]), _vm._v(" "), _c('div', {
+    staticClass: "list-card"
+  }, [_c('div', {
+    staticClass: "user flex flex-row"
+  }, [_vm._m(8), _vm._v(" "), _c('div', {
+    staticClass: "user-info flex1"
+  }, [_c('p', {
+    staticClass: "user-name"
+  }, [_c('span', {
+    staticClass: "owner-name"
+  }, [_vm._v("李小七/")]), _vm._v(" "), _c('span', {
+    staticClass: "pet-name"
+  }, [_vm._v("米粒儿")])]), _vm._v(" "), _c('p', {
+    staticClass: "signature"
+  }, [_vm._v("吃葡萄不吐葡萄皮儿")])], 1), _vm._v(" "), _vm._m(9)]), _vm._v(" "), _vm._m(10), _vm._v(" "), _vm._m(11)])])], 1)
 }
-var staticRenderFns = []
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "avatar"
+  }, [_c('img', {
+    attrs: {
+      "src": "/static/images/pic_12.png",
+      "mode": "widthFix"
+    }
+  })])
+},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "attention-status"
+  }, [_c('span', {
+    staticClass: "icon"
+  }), _vm._v(" "), _c('span', {
+    staticClass: "text"
+  }, [_vm._v("关注")])])
+},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "card-content"
+  }, [_c('div', {
+    staticClass: "image-wrap flex flex-row single"
+  }, [_c('div', {
+    staticClass: "image"
+  }, [_c('img', {
+    attrs: {
+      "src": "/static/images/discovery_03.png",
+      "mode": "widthFix"
+    }
+  })])]), _vm._v(" "), _c('div', {
+    staticClass: "text-wrap"
+  }, [_vm._v("今天米修被我领回家啦！一只双子座的狗狗哦！刚满月几天。")])])
+},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "flex flex-row card-actions"
+  }, [_c('div', {
+    staticClass: "praise"
+  }, [_c('span', {
+    staticClass: "icon"
+  }), _vm._v(" "), _c('span', {
+    staticClass: "number"
+  }, [_vm._v("116")])]), _vm._v(" "), _c('div', {
+    staticClass: "comment"
+  }, [_c('span', {
+    staticClass: "icon"
+  }), _vm._v(" "), _c('span', {
+    staticClass: "number"
+  }, [_vm._v("18")])]), _vm._v(" "), _c('div', {
+    staticClass: "share"
+  }, [_c('span', {
+    staticClass: "icon"
+  })])])
+},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "avatar"
+  }, [_c('img', {
+    attrs: {
+      "src": "/static/images/pic_12.png",
+      "mode": "widthFix"
+    }
+  })])
+},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "attention-status"
+  }, [_c('span', {
+    staticClass: "icon"
+  }), _vm._v(" "), _c('span', {
+    staticClass: "text"
+  }, [_vm._v("关注")])])
+},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "card-content"
+  }, [_c('div', {
+    staticClass: "image-wrap flex flex-row double"
+  }, [_c('div', {
+    staticClass: "image"
+  }, [_c('img', {
+    attrs: {
+      "src": "/static/images/discovery_21.png",
+      "mode": "widthFix"
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "image"
+  }, [_c('img', {
+    attrs: {
+      "src": "/static/images/discovery_23.png",
+      "mode": "widthFix"
+    }
+  })])]), _vm._v(" "), _c('div', {
+    staticClass: "text-wrap"
+  }, [_vm._v("今天米修被我领回家啦！一只双子座的狗狗哦！刚满月几天。")])])
+},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "flex flex-row card-actions"
+  }, [_c('div', {
+    staticClass: "praise liked"
+  }, [_c('span', {
+    staticClass: "icon"
+  }), _vm._v(" "), _c('span', {
+    staticClass: "number"
+  }, [_vm._v("116")])]), _vm._v(" "), _c('div', {
+    staticClass: "comment"
+  }, [_c('span', {
+    staticClass: "icon"
+  }), _vm._v(" "), _c('span', {
+    staticClass: "number"
+  }, [_vm._v("18")])]), _vm._v(" "), _c('div', {
+    staticClass: "share"
+  }, [_c('span', {
+    staticClass: "icon"
+  })])])
+},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "avatar"
+  }, [_c('img', {
+    attrs: {
+      "src": "/static/images/pic_12.png",
+      "mode": "widthFix"
+    }
+  })])
+},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "attention-status followed"
+  }, [_c('span', {
+    staticClass: "icon"
+  }), _vm._v(" "), _c('span', {
+    staticClass: "text"
+  }, [_vm._v("已关注")])])
+},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "card-content"
+  }, [_c('div', {
+    staticClass: "image-wrap flex flex-row three"
+  }, [_c('div', {
+    staticClass: "image"
+  }, [_c('img', {
+    attrs: {
+      "src": "/static/images/discovery_31.png",
+      "mode": "widthFix"
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "image"
+  }, [_c('img', {
+    attrs: {
+      "src": "/static/images/discovery_33.png",
+      "mode": "widthFix"
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "image"
+  }, [_c('img', {
+    attrs: {
+      "src": "/static/images/discovery_35.png",
+      "mode": "widthFix"
+    }
+  })])]), _vm._v(" "), _c('div', {
+    staticClass: "text-wrap"
+  }, [_vm._v("今天米修被我领回家啦！一只双子座的狗狗哦！刚满月几天。")])])
+},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "flex flex-row card-actions"
+  }, [_c('div', {
+    staticClass: "praise liked"
+  }, [_c('span', {
+    staticClass: "icon"
+  }), _vm._v(" "), _c('span', {
+    staticClass: "number"
+  }, [_vm._v("116")])]), _vm._v(" "), _c('div', {
+    staticClass: "comment"
+  }, [_c('span', {
+    staticClass: "icon"
+  }), _vm._v(" "), _c('span', {
+    staticClass: "number"
+  }, [_vm._v("18")])]), _vm._v(" "), _c('div', {
+    staticClass: "share"
+  }, [_c('span', {
+    staticClass: "icon"
+  })])])
+}]
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -263,5 +527,6 @@ if (false) {
 }
 
 /***/ })
-],[17]);
+
+},[17]);
 //# sourceMappingURL=main.js.map

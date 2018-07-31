@@ -1,6 +1,6 @@
 <template>
     <div class="container add-my-pet">
-        <v-header title="添加宠物" :showBack="true"></v-header>
+        <v-header title="添加宠物" align="center" :showBack="true"></v-header>
 
         <div class="add-card">
             <div class="big-img">
@@ -53,7 +53,6 @@
 
 <script>
 import header from '../../components/header';
-// import dateTimePicker from '../../utils/dateTimePicker';
 import dateFormat from '../../utils/index'
 export default {
     data(){
