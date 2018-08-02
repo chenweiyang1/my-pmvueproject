@@ -12,7 +12,7 @@
   padding-top: 220rpx;
 }
 .discovery .img-move-bottom .headerbgbox {
-  bottom: -70rpx;
+  bottom: -66rpx;
 }
 .discovery .top-tab {
   width: 100%;
@@ -21,7 +21,7 @@
   position: fixed;
   z-index: 99;
   left: 0;
-  top: 150rpx;
+  top: 148rpx;
 }
 .discovery .top-tab .menu-wrap {
   height: 100%;

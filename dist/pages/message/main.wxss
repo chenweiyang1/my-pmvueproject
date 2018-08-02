@@ -1,13 +1,76 @@
 @import "../../common/vendor.wxss";
 
-.counter-warp {
-  text-align: center;
-  margin-top: 200rpx;
+.message .message-list.data-v-cc947c10 {
+  width: 100%;
 }
-.home {
+.message .message-list .msg.data-v-cc947c10 {
+  padding: 32rpx 24rpx;
+  background-color: #fff;
+  position: relative;
+}
+.message .message-list .msg .avatar.data-v-cc947c10 {
+  flex: 0 0 88rpx;
+  height: 88rpx;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.message .message-list .msg .avatar ._img.data-v-cc947c10 {
+  width: 100%;
+}
+.message .message-list .msg .message-preview.data-v-cc947c10 {
+  padding-left: 32rpx;
+  padding-right: 20rpx;
+}
+.message .message-list .msg .message-preview .sender-name.data-v-cc947c10 {
+  font-size: 30rpx;
+  color: #1E1E1E;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
+}
+.message .message-list .msg .message-preview .preview.data-v-cc947c10 {
+  font-size: 26rpx;
+  color: #909090;
+  line-height: 26rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.message .message-list .msg .time-counter.data-v-cc947c10 {
+  flex: 0 0 72rpx;
+  text-align: right;
+}
+.message .message-list .msg .time-counter .time.data-v-cc947c10 {
+  font-size: 24rpx;
+  color: #c8c8c8;
+  line-height: 40rpx;
+}
+.message .message-list .msg .time-counter .message-count.data-v-cc947c10 {
   display: inline-block;
-  margin: 200rpx auto;
-  padding: 10rpx 20rpx;
-  color: blue;
-  border: 2rpx solid blue;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 36rpx;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 50%;
+  background-color: #F5273B;
+}
+.message .message-list .msg.data-v-cc947c10:after {
+  content: '';
+  width: calc(100% - 48rpx);
+  height: 1rpx;
+  background-color: #F0F0F0;
+  position: absolute;
+  bottom: 1rpx;
+  left: 24rpx;
+}
+.message .message-list .msg.data-v-cc947c10:last-child::after {
+  content: none;
+}
+.message .message-list .msg.system-msg.data-v-cc947c10 {
+  margin-bottom: 14rpx;
+}
+.message .message-list .msg.system-msg.data-v-cc947c10::after {
+  content: none;
 }

@@ -1,3 +1,6 @@
+<import src="../../components/header.vue.wxml" />
 <template name="50eca38c">
-  <view class="_div data-v-6160f071"></view>
+  <view class="_div data-v-6160f071 user-center">
+    <template title="我的" align="center" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
+  </view>
 </template>

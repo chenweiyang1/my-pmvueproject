@@ -1,10 +1,57 @@
+<import src="../../components/header.vue.wxml" />
 <template name="6febfcc3">
-  <view class="_div data-v-cc947c10 counter-warp">
-    <view class="_p data-v-cc947c10">Vuex counter：{{ count }}</view>
-    <view class="_p data-v-cc947c10">
-      <button bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_button data-v-cc947c10">+</button>
-      <button bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_button data-v-cc947c10">-</button>
+  <view class="_div data-v-cc947c10 message container">
+    <template title="Ta宠" align="center" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
+    <view class="_ul data-v-cc947c10 message-list">
+      <view class="_li data-v-cc947c10 system-msg msg flex flex-row">
+        <view class="_div data-v-cc947c10 avatar">
+          <image src="/static/images/pic_12.png" mode="widthFix" class="_img data-v-cc947c10"></image>
+        </view>
+        <view class="_div data-v-cc947c10 flex1 message-preview">
+          <view class="_p data-v-cc947c10 sender-name">李小七</view>
+          <view class="_p data-v-cc947c10 preview">你的猫咪好漂亮，平常都喂什么猫粮</view>
+        </view>
+        <view class="_div data-v-cc947c10 time-counter">
+          <view class="_p data-v-cc947c10 time">15:00</view>
+          <view class="_p data-v-cc947c10 message-count">2</view>
+        </view>
+      </view>
+      <view class="_li data-v-cc947c10 msg flex flex-row">
+        <view class="_div data-v-cc947c10 avatar">
+          <image src="/static/images/pic_12.png" mode="widthFix" class="_img data-v-cc947c10"></image>
+        </view>
+        <view class="_div data-v-cc947c10 flex1 message-preview">
+          <view class="_p data-v-cc947c10 sender-name">李小七</view>
+          <view class="_p data-v-cc947c10 preview">你的猫咪好漂亮，平常都喂什么猫粮</view>
+        </view>
+        <view class="_div data-v-cc947c10 time-counter">
+          <view class="_p data-v-cc947c10 time">15:00</view>
+        </view>
+      </view>
+      <view class="_li data-v-cc947c10 msg flex flex-row">
+        <view class="_div data-v-cc947c10 avatar">
+          <image src="/static/images/pic_12.png" mode="widthFix" class="_img data-v-cc947c10"></image>
+        </view>
+        <view class="_div data-v-cc947c10 flex1 message-preview">
+          <view class="_p data-v-cc947c10 sender-name">李小七</view>
+          <view class="_p data-v-cc947c10 preview">你的猫咪好漂亮，平常都喂什么猫粮</view>
+        </view>
+        <view class="_div data-v-cc947c10 time-counter">
+          <view class="_p data-v-cc947c10 time">15:00</view>
+        </view>
+      </view>
+      <view class="_li data-v-cc947c10 msg flex flex-row">
+        <view class="_div data-v-cc947c10 avatar">
+          <image src="/static/images/pic_12.png" mode="widthFix" class="_img data-v-cc947c10"></image>
+        </view>
+        <view class="_div data-v-cc947c10 flex1 message-preview">
+          <view class="_p data-v-cc947c10 sender-name">李小七</view>
+          <view class="_p data-v-cc947c10 preview">你的猫咪好漂亮，平常都喂什么猫粮</view>
+        </view>
+        <view class="_div data-v-cc947c10 time-counter">
+          <view class="_p data-v-cc947c10 time">15:00</view>
+        </view>
+      </view>
     </view>
-    <view bindtap="handleProxy" class="_a data-v-cc947c10 home" data-eventid="{{'2'}}" data-comkey="{{$k}}">去往首页</view>
   </view>
 </template>

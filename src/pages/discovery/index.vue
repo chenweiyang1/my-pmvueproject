@@ -177,7 +177,7 @@ export default {
   padding-top: 220rpx;
   .img-move-bottom{
     .headerbgbox{
-      bottom: -70rpx;
+      bottom: -66rpx;
     }
   }
   .top-tab{
@@ -187,7 +187,7 @@ export default {
     position: fixed;
     z-index: 99;
     left: 0;
-    top: 150rpx;
+    top: 148rpx;
     .menu-wrap{
       height: 100%;
       line-height: 70rpx;
