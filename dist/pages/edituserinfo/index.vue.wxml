@@ -1,0 +1,52 @@
+<import src="../../components/header.vue.wxml" />
+<template name="1228cda3">
+  <view class="_div data-v-046866f0 container edit-user-info">
+    <template title="个人信息编辑" align="center" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
+    <view class="_div data-v-046866f0 user-avatar flex flex-row">
+      <label class="_label data-v-046866f0">头像</label>
+      <view class="_div data-v-046866f0 flex1">
+        <view class="_div data-v-046866f0 avatar-wrap">
+          <image src="/static/images/pic_12.png" mode="widthFix" class="_img data-v-046866f0"></image>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-046866f0 user-info-list">
+      <view class="_div data-v-046866f0 item flex flex-row">
+        <label class="_label data-v-046866f0">昵称</label>
+        <view class="_div data-v-046866f0 flex1">
+          <input type="text" placeholder="请输入昵称" class="_input data-v-046866f0" />
+        </view>
+      </view>
+      <view class="_div data-v-046866f0 item flex flex-row">
+        <label class="_label data-v-046866f0">生日</label>
+        <view class="_div data-v-046866f0 flex1">
+          <picker mode="date" value="{{birthDay}}" bindchange="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_picker data-v-046866f0">
+            <view class="_view data-v-046866f0 picker-handle">
+              <label class="_span data-v-046866f0 placeholder" wx:if="{{birthDay==''}}">请选择生日</label>
+              <label wx:else class="_span data-v-046866f0">{{birthDay}}</label>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="_div data-v-046866f0 item flex flex-row">
+        <label class="_label data-v-046866f0">性别</label>
+        <view class="_div data-v-046866f0 flex1">
+          <picker range="{{array}}" value="{{gender}}" bindchange="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_picker data-v-046866f0">
+            <view class="_view data-v-046866f0 picker-handle">
+              <label class="_span data-v-046866f0">{{array[gender]}}</label>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="_div data-v-046866f0 item flex flex-row">
+        <label class="_label data-v-046866f0">常出没地</label>
+        <view class="_div data-v-046866f0 flex1">
+          <picker mode="region" bindchange="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_picker data-v-046866f0">
+            <view class="_view data-v-046866f0 picker-handle"> {{city}} </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-046866f0 save-btn">保存</view>
+  </view>
+</template>

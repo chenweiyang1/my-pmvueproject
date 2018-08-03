@@ -4,7 +4,8 @@
     "pages/discovery/main",
     "pages/message/main",
     "pages/my/main",
-    "pages/addmypet/main"
+    "pages/addmypet/main",
+    "pages/edituserinfo/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

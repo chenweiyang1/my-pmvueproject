@@ -184,30 +184,6 @@ swiper{
 .list .swiper swiper-item .pet-card .pet-info .texts .pet-name .name{
   margin-right: 19rpx;
 }
-/* .list .swiper swiper-item .pet-card .pet-info .texts .pet-name .gender-status{
-  display: inline-block;
-  height: 30rpx;
-  padding: 0 14rpx;
-  padding-left: 32rpx;
-  border-radius: 15rpx;
-  background-color: #45B7FF;
-  color: #fff;
-  font-size: 22rpx;
-  position: relative;
-}
-.list .swiper swiper-item .pet-card .pet-info .texts .pet-name .gender-status span{
-  display: inline-block;
-  width: 16rpx;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 16rpx auto;
-  position: absolute;
-  left: 15rpx;
-}
-.list .swiper swiper-item .pet-card .pet-info .texts .pet-name .gender-status span.boy{
-  background-image: url(../../icons/boy_03.png);
-} */
 .list .swiper swiper-item .pet-card .pet-info .texts .signature{
   font-size: 28rpx;
   margin-top: 5rpx;
