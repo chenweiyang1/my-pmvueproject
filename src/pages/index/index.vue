@@ -78,16 +78,16 @@ export default {
     },
     getUserInfo () {
       // 调用登录接口
-      wx.login({
-        success: () => {
-          wx.getUserInfo({
-            success: (res) => {
-              console.log(res)
-              this.userInfo = res.userInfo
-            }
-          })
-        }
-      })
+      // wx.login({
+      //   success: () => {
+      //     wx.getUserInfo({
+      //       success: (res) => {
+      //         console.log(res)
+      //         this.userInfo = res.userInfo
+      //       }
+      //     })
+      //   }
+      // })
     },
     swiperChange(e) {
       this.swiperIndex = e.target.current;

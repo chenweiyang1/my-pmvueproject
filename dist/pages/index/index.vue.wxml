@@ -1,8 +1,8 @@
 <import src="../../components/header.vue.wxml" />
 <import src="../../components/petStatus.vue.wxml" />
-<template name="1059f164">
+<template name="5060f3b8">
   <view class="_div data-v-7c1ad2fa container index">
-    <template title="Ta宠" align="center" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
+    <template title="Ta宠" align="center" data="{{...$root[$kk+'0'], $root}}" is="3bd3e587"></template>
     <view class="_view data-v-7c1ad2fa list">
       <swiper class="_swiper data-v-7c1ad2fa swiper" previous-margin="55rpx" next-margin="44rpx" duration="500">
         <block index="{{index}}" wx:key="index" key="{{index}}" wx:for="{{movies}}" wx:for-index="index" wx:for-item="item">
@@ -26,7 +26,7 @@
                 <view class="_div data-v-7c1ad2fa flex1 texts">
                   <view class="_p data-v-7c1ad2fa pet-name">
                     <label class="_span data-v-7c1ad2fa name">米粒儿</label>
-                    <template gender="0" data="{{...$root[$kk+'1-'+index], $root}}" is="36c2c07d"></template>
+                    <template gender="0" data="{{...$root[$kk+'1-'+index], $root}}" is="82226c32"></template>
                   </view>
                   <view class="_p data-v-7c1ad2fa signature">吃葡萄不吐葡萄皮儿</view>
                 </view>

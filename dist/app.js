@@ -27,7 +27,7 @@ app.$mount();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_1_1_1_mpvue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(7);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -45,7 +45,7 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_script_index_0_App_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_1_1_1_mpvue_loader_lib_selector_type_script_index_0_App_vue__["a" /* default */],
   __vue_template__,
   __vue_styles__,
   __vue_scopeId__,
@@ -88,11 +88,48 @@ if (false) {(function () {
 /* harmony default export */ __webpack_exports__["a"] = ({
   created: function created() {
     // 调用API从本地缓存中获取数据
-    var logs = wx.getStorageSync('logs') || [];
-    logs.unshift(Date.now());
-    wx.setStorageSync('logs', logs);
+    // const logs = wx.getStorageSync('logs') || []
+    // logs.unshift(Date.now())
+    // wx.setStorageSync('logs', logs)
 
-    console.log('app created and cache logs by setStorageSync');
+    // cwx.loginonsole.log('app created and cache logs by setStorageSync')
+    wx.login({
+      success: function success(res) {
+        console.log(res);
+        wx.request({
+          url: 'http://rendongyue.free.ngrok.cc/wx/login',
+          method: 'GET',
+          data: {
+            code: res.code
+          },
+          success: function success(res) {
+            console.log(res);
+            var sessionId = res.data.sessionId;
+            wx.getUserInfo({
+              success: function success(res) {
+                console.log(res);
+                // this.userInfo = res.userInfo
+                // signature rawData encryptedData iv sessionId
+                wx.request({
+                  url: 'http://rendongyue.free.ngrok.cc/wx/login/info',
+                  method: 'GET',
+                  data: {
+                    signature: res.signature,
+                    rawData: res.rawData,
+                    encryptedData: res.encryptedData,
+                    iv: res.iv,
+                    sessionId: sessionId
+                  },
+                  success: function success(res) {
+                    console.log(res);
+                  }
+                });
+              }
+            });
+          }
+        });
+      }
+    });
   }
 });
 
