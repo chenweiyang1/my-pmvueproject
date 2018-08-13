@@ -142,24 +142,47 @@
 
 <script>
 import header from '@/components/header'
-
+import { host_dev } from '../../utils/base'
 export default {
   data () {
     return {
       tabType: 1,
+      page: 1
     }
   },
   components: {
     'vHeader': header,
   },
-  created () {
-    
+  beforeMount() {
+    this.getData();
   },
   methods:{
     tabClick(i){
       this.tabType = i;
       //loadData()
+    },
+    getData(){
+      wx.request({
+          url:`${host_dev}/wx/dynamic`,
+          method: 'GET',
+          data: {
+              // signature: res.signature,
+              // rawData: res.rawData,
+              // encryptedData: res.encryptedData,
+              // iv: res.iv,
+              // session: wx.getStorageSync('sessionId'),
+              pageNumber: this.page,
+              pageSize: 10,
+          },
+          success: res =>{
+              console.error(res)
+          }
+      });
     }
+  },
+  onReachBottom(){
+    this.page++;
+
   }
 }
 </script>

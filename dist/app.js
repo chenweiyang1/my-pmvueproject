@@ -4,14 +4,15 @@ global.webpackJsonp([8],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
-/* 3 */
+/* 3 */,
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App__ = __webpack_require__(6);
 
 
 
@@ -22,16 +23,16 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 app.$mount();
 
 /***/ }),
-/* 4 */,
-/* 5 */
+/* 5 */,
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_1_1_1_mpvue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_1_1_1_mpvue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(8);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(6)
+  __webpack_require__(7)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -74,19 +75,22 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_base__ = __webpack_require__(3);
+
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   created: function created() {
+    console.log(__WEBPACK_IMPORTED_MODULE_0__utils_base__["a" /* host_dev */]);
     // 调用API从本地缓存中获取数据
     // const logs = wx.getStorageSync('logs') || []
     // logs.unshift(Date.now())
@@ -97,7 +101,7 @@ if (false) {(function () {
       success: function success(res) {
         console.log(res);
         wx.request({
-          url: 'http://rendongyue.free.ngrok.cc/wx/login',
+          url: __WEBPACK_IMPORTED_MODULE_0__utils_base__["a" /* host_dev */] + '/wx/login',
           method: 'GET',
           data: {
             code: res.code
@@ -105,13 +109,14 @@ if (false) {(function () {
           success: function success(res) {
             console.log(res);
             var sessionId = res.data.sessionId;
+            wx.setStorageSync('sessionId', sessionId);
             wx.getUserInfo({
               success: function success(res) {
                 console.log(res);
                 // this.userInfo = res.userInfo
                 // signature rawData encryptedData iv sessionId
                 wx.request({
-                  url: 'http://rendongyue.free.ngrok.cc/wx/login/info',
+                  url: __WEBPACK_IMPORTED_MODULE_0__utils_base__["a" /* host_dev */] + '/wx/login/info',
                   method: 'GET',
                   data: {
                     signature: res.signature,
@@ -134,5 +139,5 @@ if (false) {(function () {
 });
 
 /***/ })
-],[3]);
+],[4]);
 //# sourceMappingURL=app.js.map

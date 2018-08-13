@@ -2,32 +2,37 @@ require("../../common/manifest.js");
 require("../../common/vendor.js");
 global.webpackJsonp([6],{
 
-/***/ 22:
+/***/ 23:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(24);
 
 
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_1__index__["a" /* default */]);
 app.$mount();
+/* harmony default export */ __webpack_exports__["default"] = ({
+    config: {
+        "enablePullDownRefresh": true
+    }
+});
 
 /***/ }),
 
-/***/ 23:
+/***/ 24:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_1_1_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_1_1_1_mpvue_loader_lib_template_compiler_index_id_data_v_396d0a3e_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_1_1_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_1_1_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_1_1_1_mpvue_loader_lib_template_compiler_index_id_data_v_396d0a3e_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_1_1_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(27);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(24)
+  __webpack_require__(25)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -72,18 +77,19 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 24:
+/***/ 25:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 25:
+/***/ 26:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_header__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_base__ = __webpack_require__(3);
 //
 //
 //
@@ -232,26 +238,50 @@ if (false) {(function () {
 /* harmony default export */ __webpack_exports__["a"] = ({
   data: function data() {
     return {
-      tabType: 1
+      tabType: 1,
+      page: 1
     };
   },
 
   components: {
     'vHeader': __WEBPACK_IMPORTED_MODULE_0__components_header__["a" /* default */]
   },
-  created: function created() {},
+  beforeMount: function beforeMount() {
+    this.getData();
+  },
 
   methods: {
     tabClick: function tabClick(i) {
       this.tabType = i;
       //loadData()
+    },
+    getData: function getData() {
+      wx.request({
+        url: __WEBPACK_IMPORTED_MODULE_1__utils_base__["a" /* host_dev */] + '/wx/dynamic',
+        method: 'GET',
+        data: {
+          // signature: res.signature,
+          // rawData: res.rawData,
+          // encryptedData: res.encryptedData,
+          // iv: res.iv,
+          // session: wx.getStorageSync('sessionId'),
+          pageNumber: this.page,
+          pageSize: 10
+        },
+        success: function success(res) {
+          console.error(res);
+        }
+      });
     }
+  },
+  onReachBottom: function onReachBottom() {
+    this.page++;
   }
 });
 
 /***/ }),
 
-/***/ 26:
+/***/ 27:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -528,5 +558,5 @@ if (false) {
 
 /***/ })
 
-},[22]);
+},[23]);
 //# sourceMappingURL=main.js.map

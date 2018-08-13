@@ -1,6 +1,8 @@
 <script>
+import {host_dev} from './utils/base'
 export default {
   created () {
+    console.log(host_dev)
     // 调用API从本地缓存中获取数据
     // const logs = wx.getStorageSync('logs') || []
     // logs.unshift(Date.now())
@@ -11,7 +13,7 @@ export default {
       success: res => {
         console.log(res);
         wx.request({
-          url:'http://rendongyue.free.ngrok.cc/wx/login',
+          url: `${host_dev}/wx/login`,
           method: 'GET',
           data: {
             code: res.code,
@@ -19,13 +21,14 @@ export default {
           success: res =>{
             console.log(res)
             let sessionId = res.data.sessionId;
+            wx.setStorageSync('sessionId', sessionId)
             wx.getUserInfo({
               success: (res) => {
                 console.log(res)
                 // this.userInfo = res.userInfo
                 // signature rawData encryptedData iv sessionId
                 wx.request({
-                  url:'http://rendongyue.free.ngrok.cc/wx/login/info',
+                  url:`${host_dev}/wx/login/info`,
                   method: 'GET',
                   data: {
                     signature: res.signature,

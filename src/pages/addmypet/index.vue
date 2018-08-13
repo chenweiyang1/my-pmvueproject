@@ -53,7 +53,8 @@
 
 <script>
 import header from '../../components/header';
-import dateFormat from '../../utils/index'
+import dateFormat from '../../utils/index';
+import { host_dev } from '../../utils/base';
 export default {
     data(){
         return{
@@ -68,7 +69,20 @@ export default {
         'vHeader': header
     },
     beforeMount: function(){
-
+        wx.request({
+            url:`${host_dev}/wx/user/`,
+            method: 'GET',
+            data: {
+                // signature: res.signature,
+                // rawData: res.rawData,
+                // encryptedData: res.encryptedData,
+                // iv: res.iv,
+                session: wx.getStorageSync('sessionId'),
+            },
+            success: res =>{
+                console.error(res)
+            }
+        });
     },
     methods:{
         chooseGender(g){

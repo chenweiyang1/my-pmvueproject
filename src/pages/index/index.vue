@@ -55,7 +55,7 @@
 <script>
 import petStatus from '@/components/petStatus'
 import header from '../../components/header'
-
+import { host_dev } from '../../utils/base'
 export default {
   data () {
     return {
@@ -76,19 +76,6 @@ export default {
       const url = '../addmypet/main'
       wx.navigateTo({ url })
     },
-    getUserInfo () {
-      // 调用登录接口
-      // wx.login({
-      //   success: () => {
-      //     wx.getUserInfo({
-      //       success: (res) => {
-      //         console.log(res)
-      //         this.userInfo = res.userInfo
-      //       }
-      //     })
-      //   }
-      // })
-    },
     swiperChange(e) {
       this.swiperIndex = e.target.current;
       // console.log(e)
@@ -96,8 +83,23 @@ export default {
   },
 
   created () {
+    wx.request({
+        url:`${host_dev}/wx/user/xxxx`,
+        method: 'POST',
+        data: {
+            // signature: res.signature,
+            // rawData: res.rawData,
+            // encryptedData: res.encryptedData,
+            // iv: res.iv,
+            session: wx.getStorageSync('sessionId'),
+        },
+        success: res =>{
+            console.error(res)
+        }
+    });
+    
     // 调用应用实例的方法获取全局数据
-    this.getUserInfo()
+    // this.getUserInfo()
   }
 }
 </script>
