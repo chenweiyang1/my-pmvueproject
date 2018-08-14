@@ -155,7 +155,10 @@ if (false) {(function () {
             gender: 1,
             birthDate: '',
             isSterilization: false,
-            petDesc: ''
+            petDesc: '',
+            pic1: '',
+            pic2: '',
+            pic3: ''
         };
     },
 
@@ -174,7 +177,7 @@ if (false) {(function () {
                 session: wx.getStorageSync('sessionId')
             },
             success: function success(res) {
-                console.error(res);
+                // console.error(res)
             }
         });
     },
@@ -185,7 +188,42 @@ if (false) {(function () {
         changeDate: function changeDate(e) {
             this.birthDate = e.mp.detail.value;
         },
-        confirmAdd: function confirmAdd() {}
+        confirmAdd: function confirmAdd() {},
+        chooseImg: function chooseImg(i) {
+            var _this = this;
+
+            wx.chooseImage({
+                count: 3, // 默认9
+                sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+                sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+                success: function success(res) {
+                    // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+                    var tempFilePaths = res.tempFilePaths;
+                    switch (i) {
+                        case 1:
+                            _this.pic1 = tempFilePaths[0];
+                            break;
+                        case 2:
+                            _this.pic2 = tempFilePaths[0];
+                            break;
+                        case 3:
+                            _this.pic3 = tempFilePaths[0];
+                            break;
+
+                        default:
+                            break;
+                    }
+                    wx.uploadFile({
+                        url: __WEBPACK_IMPORTED_MODULE_2__utils_base__["a" /* host_dev */] + '/wx/petinfo/uploadimg',
+                        filePath: tempFilePaths[0],
+                        name: 'file',
+                        success: function success(res) {
+                            console.log(JSON.parse(res.data));
+                        }
+                    });
+                }
+            });
+        }
     }
 });
 
@@ -240,7 +278,61 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }
   }), _vm._v(" "), _c('div', {
     staticClass: "add-card"
-  }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
+  }, [_c('div', {
+    staticClass: "big-img",
+    class: _vm.pic1 == '' ? '' : 'has-img',
+    attrs: {
+      "eventid": '0'
+    },
+    on: {
+      "click": function($event) {
+        _vm.chooseImg(1)
+      }
+    }
+  }, [(_vm.pic1 != '') ? _c('image', {
+    attrs: {
+      "mode": "widthFix",
+      "src": _vm.pic1
+    }
+  }) : _vm._e()]), _vm._v(" "), _c('div', {
+    staticClass: "flex flex-row"
+  }, [_c('div', {
+    staticClass: "flex1"
+  }, [_c('div', {
+    staticClass: "small-img",
+    class: _vm.pic2 == '' ? '' : 'has-img',
+    attrs: {
+      "eventid": '1'
+    },
+    on: {
+      "click": function($event) {
+        _vm.chooseImg(2)
+      }
+    }
+  }, [(_vm.pic2 != '') ? _c('image', {
+    attrs: {
+      "mode": "widthFix",
+      "src": _vm.pic2
+    }
+  }) : _vm._e()])]), _vm._v(" "), _c('div', {
+    staticClass: "flex1"
+  }, [_c('div', {
+    staticClass: "small-img",
+    class: _vm.pic3 == '' ? '' : 'has-img',
+    attrs: {
+      "eventid": '2'
+    },
+    on: {
+      "click": function($event) {
+        _vm.chooseImg(3)
+      }
+    }
+  }, [(_vm.pic3 != '') ? _c('image', {
+    attrs: {
+      "mode": "widthFix",
+      "src": _vm.pic3
+    }
+  }) : _vm._e()])])]), _vm._v(" "), _c('div', {
     staticClass: "inpunt-line"
   }, [_c('input', {
     directives: [{
@@ -252,7 +344,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     attrs: {
       "type": "text",
       "placeholder": "请输入宠物姓名",
-      "eventid": '0'
+      "eventid": '3'
     },
     domProps: {
       "value": (_vm.petName)
@@ -269,7 +361,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "chek-option boy",
     class: _vm.gender == 1 ? 'active' : '',
     attrs: {
-      "eventid": '1'
+      "eventid": '4'
     },
     on: {
       "click": function($event) {
@@ -284,7 +376,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "chek-option girl",
     class: _vm.gender == 2 ? 'active' : '',
     attrs: {
-      "eventid": '2'
+      "eventid": '5'
     },
     on: {
       "click": function($event) {
@@ -300,7 +392,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   }, [_c('picker', {
     attrs: {
       "mode": "date",
-      "eventid": '3'
+      "eventid": '6'
     },
     on: {
       "change": _vm.changeDate
@@ -322,7 +414,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "is-sterilization-option",
     class: _vm.isSterilization ? '' : 'active',
     attrs: {
-      "eventid": '4'
+      "eventid": '7'
     },
     on: {
       "click": function($event) {
@@ -333,7 +425,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "is-sterilization-option",
     class: _vm.isSterilization ? 'active' : '',
     attrs: {
-      "eventid": '5'
+      "eventid": '8'
     },
     on: {
       "click": function($event) {
@@ -352,7 +444,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     attrs: {
       "type": "text",
       "placeholder": "输入Ta最可爱的一面",
-      "eventid": '6'
+      "eventid": '9'
     },
     domProps: {
       "value": (_vm.petDesc)
@@ -367,42 +459,14 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "confirm-add-pet",
     attrs: {
       "plain": "",
-      "eventid": '7'
+      "eventid": '10'
     },
     on: {
       "click": _vm.confirmAdd
     }
   }, [_vm._v("确认添加")])], 1)
 }
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "big-img"
-  }, [_c('image', {
-    attrs: {
-      "mode": "widthFix"
-    }
-  })])
-},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "flex flex-row"
-  }, [_c('div', {
-    staticClass: "flex1"
-  }, [_c('div', {
-    staticClass: "small-img"
-  }, [_c('image', {
-    attrs: {
-      "mode": "widthFix"
-    }
-  })])]), _vm._v(" "), _c('div', {
-    staticClass: "flex1"
-  }, [_c('div', {
-    staticClass: "small-img"
-  }, [_c('image', {
-    attrs: {
-      "mode": "widthFix"
-    }
-  })])])])
-}]
+var staticRenderFns = []
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);

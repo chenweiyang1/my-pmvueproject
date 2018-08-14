@@ -147,7 +147,8 @@ export default {
   data () {
     return {
       tabType: 1,
-      page: 1
+      page: 1,
+      listData: [],
     }
   },
   components: {
@@ -159,30 +160,29 @@ export default {
   methods:{
     tabClick(i){
       this.tabType = i;
-      //loadData()
+      this.getData(true);
     },
-    getData(){
+    getData(restetPage){
+      if(restetPage){this.page=1;}
       wx.request({
           url:`${host_dev}/wx/dynamic`,
           method: 'GET',
           data: {
-              // signature: res.signature,
-              // rawData: res.rawData,
-              // encryptedData: res.encryptedData,
-              // iv: res.iv,
-              // session: wx.getStorageSync('sessionId'),
+              session: wx.getStorageSync('sessionId'),
               pageNumber: this.page,
               pageSize: 10,
           },
           success: res =>{
-              console.error(res)
+              console.log(res);
+              if(restetPage){this.listData = [];}
+              this.listData.concat(res.data.data.list);
           }
       });
     }
   },
   onReachBottom(){
     this.page++;
-
+    this.getData(false);
   }
 }
 </script>

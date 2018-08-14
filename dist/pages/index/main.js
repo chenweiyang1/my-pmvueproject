@@ -183,7 +183,7 @@ if (false) {(function () {
         session: wx.getStorageSync('sessionId')
       },
       success: function success(res) {
-        console.error(res);
+        // console.error(res)
       }
     });
 

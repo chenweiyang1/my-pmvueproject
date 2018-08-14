@@ -239,7 +239,8 @@ if (false) {(function () {
   data: function data() {
     return {
       tabType: 1,
-      page: 1
+      page: 1,
+      listData: []
     };
   },
 
@@ -253,29 +254,35 @@ if (false) {(function () {
   methods: {
     tabClick: function tabClick(i) {
       this.tabType = i;
-      //loadData()
+      this.getData(true);
     },
-    getData: function getData() {
+    getData: function getData(restetPage) {
+      var _this = this;
+
+      if (restetPage) {
+        this.page = 1;
+      }
       wx.request({
         url: __WEBPACK_IMPORTED_MODULE_1__utils_base__["a" /* host_dev */] + '/wx/dynamic',
         method: 'GET',
         data: {
-          // signature: res.signature,
-          // rawData: res.rawData,
-          // encryptedData: res.encryptedData,
-          // iv: res.iv,
-          // session: wx.getStorageSync('sessionId'),
+          session: wx.getStorageSync('sessionId'),
           pageNumber: this.page,
           pageSize: 10
         },
         success: function success(res) {
-          console.error(res);
+          console.log(res);
+          if (restetPage) {
+            _this.listData = [];
+          }
+          _this.listData.concat(res.data.data.list);
         }
       });
     }
   },
   onReachBottom: function onReachBottom() {
     this.page++;
+    this.getData(false);
   }
 });
 

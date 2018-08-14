@@ -94,7 +94,7 @@ export default {
             session: wx.getStorageSync('sessionId'),
         },
         success: res =>{
-            console.error(res)
+            // console.error(res)
         }
     });
     

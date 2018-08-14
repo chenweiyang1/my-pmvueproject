@@ -3,18 +3,18 @@
         <v-header title="添加宠物" align="center" :showBack="true"></v-header>
 
         <div class="add-card">
-            <div class="big-img">
-                <image mode="widthFix"></image>
+            <div @click="chooseImg(1)" class="big-img" :class="pic1==''?'':'has-img'">
+                <image mode="widthFix" v-if="pic1!=''" :src="pic1"></image>
             </div>
             <div class="flex flex-row">
                 <div class="flex1">
-                    <div class="small-img">
-                        <image mode="widthFix"></image>
+                    <div @click="chooseImg(2)" class="small-img" :class="pic2==''?'':'has-img'">
+                        <image mode="widthFix" v-if="pic2!=''" :src="pic2"></image>
                     </div>
                 </div>
                 <div class="flex1">
-                    <div class="small-img">
-                        <image mode="widthFix"></image>
+                    <div @click="chooseImg(3)" class="small-img" :class="pic3==''?'':'has-img'">
+                        <image mode="widthFix" v-if="pic3!=''" :src="pic3"></image>
                     </div>
                 </div>
             </div>
@@ -63,6 +63,9 @@ export default {
             birthDate: '',
             isSterilization: false,
             petDesc: '',
+            pic1: '',
+            pic2: '',
+            pic3: '',
         }
     },
     components:{
@@ -80,7 +83,7 @@ export default {
                 session: wx.getStorageSync('sessionId'),
             },
             success: res =>{
-                console.error(res)
+                // console.error(res)
             }
         });
     },
@@ -93,6 +96,39 @@ export default {
         },
         confirmAdd(){
             
+        },
+        chooseImg(i){
+            wx.chooseImage({
+                count: 3, // 默认9
+                sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+                sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+                success: (res) => {
+                    // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+                    var tempFilePaths = res.tempFilePaths;
+                    switch (i) {
+                        case 1:
+                            this.pic1 = tempFilePaths[0];
+                            break;
+                        case 2:
+                            this.pic2 = tempFilePaths[0];
+                            break;
+                        case 3:
+                            this.pic3 = tempFilePaths[0];
+                            break;
+                    
+                        default:
+                            break;
+                    }
+                    wx.uploadFile({
+                        url: `${host_dev}/wx/petinfo/uploadimg`,
+                        filePath: tempFilePaths[0],
+                        name: 'file',
+                        success: (res) => {
+                            console.log(JSON.parse(res.data))
+                        }
+                    })
+                }
+            })
         }
     }
 }
@@ -112,6 +148,10 @@ export default {
             overflow: hidden;
             background-color: #F1F1F1;
             margin-bottom: 13rpx;
+            background-repeat: no-repeat;
+            background-size: 36rpx auto;
+            background-position: center;
+            background-image: url(../../icons/jia.png);
             image{
                 width: 100%;
             }
@@ -128,6 +168,10 @@ export default {
                     height: 90px;
                     background-color: #F1F1F1;
                     overflow: hidden;
+                    background-repeat: no-repeat;
+                    background-size: 25rpx auto;
+                    background-position: center;
+                    background-image: url(../../icons/jia.png);
                     image{
                         width: 100%;
                     }
