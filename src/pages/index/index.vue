@@ -56,6 +56,7 @@
 import petStatus from '@/components/petStatus'
 import header from '../../components/header'
 import { host_dev } from '../../utils/base'
+import app from '../../App'
 export default {
   data () {
     return {
@@ -82,21 +83,28 @@ export default {
     }
   },
 
-  created () {
-    wx.request({
-        url:`${host_dev}/wx/user/xxxx`,
-        method: 'POST',
-        data: {
-            // signature: res.signature,
-            // rawData: res.rawData,
-            // encryptedData: res.encryptedData,
-            // iv: res.iv,
-            session: wx.getStorageSync('sessionId'),
-        },
-        success: res =>{
-            // console.error(res)
-        }
+  beforeMount () {
+    console.log(app)
+    app.login().then((res) => {
+      // wx.setStorageSync('sessionId', sessionId);
+      console.log(res)
+    }).catch((err) => {
+      console.log(err)
     });
+    // wx.request({
+    //     url:`${host_dev}/wx/user/xxxx`,
+    //     method: 'POST',
+    //     data: {
+    //         // signature: res.signature,
+    //         // rawData: res.rawData,
+    //         // encryptedData: res.encryptedData,
+    //         // iv: res.iv,
+    //         session: wx.getStorageSync('sessionId'),
+    //     },
+    //     success: res =>{
+    //         // console.error(res)
+    //     }
+    // });
     
     // 调用应用实例的方法获取全局数据
     // this.getUserInfo()

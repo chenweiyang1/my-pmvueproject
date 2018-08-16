@@ -1,7 +1,7 @@
 <import src="../../components/header.vue.wxml" />
-<template name="28fe120d">
+<template name="1228cda3">
   <view class="_div data-v-046866f0 container edit-user-info">
-    <template title="个人信息编辑" align="center" data="{{...$root[$kk+'0'], $root}}" is="3bd3e587"></template>
+    <template title="个人信息编辑" align="center" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
     <view class="_div data-v-046866f0 user-avatar flex flex-row">
       <label class="_label data-v-046866f0">头像</label>
       <view class="_div data-v-046866f0 flex1">

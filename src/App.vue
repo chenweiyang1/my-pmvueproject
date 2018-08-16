@@ -2,54 +2,50 @@
 import {host_dev} from './utils/base'
 export default {
   created () {
-    console.log(host_dev)
-    // 调用API从本地缓存中获取数据
-    // const logs = wx.getStorageSync('logs') || []
-    // logs.unshift(Date.now())
-    // wx.setStorageSync('logs', logs)
-
-    // cwx.loginonsole.log('app created and cache logs by setStorageSync')
-    wx.login({
-      success: res => {
-        console.log(res);
-        wx.request({
-          url: `${host_dev}/wx/login`,
-          method: 'GET',
-          data: {
-            code: res.code,
-          },
-          success: res =>{
-            console.log(res)
-            let sessionId = res.data.sessionId;
-            wx.setStorageSync('sessionId', sessionId)
-            wx.getUserInfo({
-              success: (res) => {
+    
+    
+  },
+  login: function(){
+    let _that = this;
+    return new Promise(function(resolve, reject) {
+      wx.login({
+        success: res => {
+          console.log(res);
+          if(res.code){
+            wx.request({
+              url: `${host_dev}/wx/login`,
+              method: 'GET',
+              data: {
+                code: res.code,
+              },
+              success: res =>{
                 console.log(res)
-                // this.userInfo = res.userInfo
-                // signature rawData encryptedData iv sessionId
-                wx.request({
-                  url:`${host_dev}/wx/login/info`,
-                  method: 'GET',
-                  data: {
-                    signature: res.signature,
-                    rawData: res.rawData,
-                    encryptedData: res.encryptedData,
-                    iv: res.iv,
-                    sessionId: sessionId,
-                  },
-                  success: res =>{
-                    console.log(res)
-                    
+                let sessionId = res.data.sessionId;
+                resolve(sessionId);
+                wx.getUserInfo({
+                  success: (res) => {
+                    wx.request({
+                      url:`${host_dev}/wx/login/info`,
+                      method: 'GET',
+                      data: {
+                        signature: res.signature,
+                        rawData: res.rawData,
+                        encryptedData: res.encryptedData,
+                        iv: res.iv,
+                        sessionId: sessionId,
+                      },
+                      success: res =>{}
+                    });
                   }
                 });
               }
-            })
-            
+            });
+          } else {
+            console.log('登录失败'+res.errMsg);
           }
-        });
-      }
-    })
-    
+        }
+      })
+    });
   }
 }
 </script>

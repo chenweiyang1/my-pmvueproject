@@ -31,7 +31,7 @@
               <img src="/static/images/discovery_03.png" mode="widthFix" />
             </div>
           </div>
-          <div class="text-wrap">今天米修被我领回家啦！一只双子座的狗狗哦！刚满月几天。</div>
+          <div class="text-wrap" @click="toDetail(1)">今天米修被我领回家啦！一只双子座的狗狗哦！刚满月几天。</div>
         </div>
         <div class="flex flex-row card-actions">
           <div class="praise">
@@ -158,6 +158,9 @@ export default {
     this.getData();
   },
   methods:{
+    toDetail(id){
+      wx.navigateTo({ url:'../discoverydetail/main' });
+    },
     tabClick(i){
       this.tabType = i;
       this.getData(true);

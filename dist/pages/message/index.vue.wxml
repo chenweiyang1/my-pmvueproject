@@ -1,7 +1,7 @@
 <import src="../../components/header.vue.wxml" />
-<template name="42c41e19">
+<template name="6febfcc3">
   <view class="_div data-v-cc947c10 message container">
-    <template title="Ta宠" align="center" data="{{...$root[$kk+'0'], $root}}" is="3bd3e587"></template>
+    <template title="Ta宠" align="center" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
     <view class="_ul data-v-cc947c10 message-list">
       <view class="_li data-v-cc947c10 system-msg msg flex flex-row">
         <view class="_div data-v-cc947c10 avatar">
