@@ -93,6 +93,44 @@ if (false) {(function () {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -121,7 +159,7 @@ if (false) {(function () {
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "container index"
+    staticClass: "container discoverydetail"
   }, [_c('v-header', {
     attrs: {
       "title": "动态详情",
@@ -129,13 +167,77 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       "showBack": true,
       "mpcomid": '0'
     }
-  }), _vm._v(" "), _c('comment', {
+  }), _vm._v(" "), _c('div', {
+    staticClass: "dynamic-detail"
+  }, [_c('div', {
+    staticClass: "user-line flex flex-row"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "flex1 user-name"
+  }, [_c('p', {
+    staticClass: "name"
+  }, [_vm._v("李先生 | 米粒儿")]), _vm._v(" "), _c('p', {
+    staticClass: "signature"
+  }, [_vm._v("吃葡萄不吐葡萄皮儿")])], 1)]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2)]), _vm._v(" "), _c('div', {
+    staticClass: "comment-list"
+  }, [_c('p', {
+    staticClass: "flex flex-row title"
+  }, [_c('span', {
+    staticClass: "flex1"
+  }, [_vm._v("全部评论")]), _vm._v(" "), _c('span', {
+    staticClass: "look-all"
+  }, [_vm._v("查看全部"), _c('span', {
+    staticClass: "i"
+  })])]), _vm._v(" "), _c('comment', {
     attrs: {
       "mpcomid": '1'
     }
-  })], 1)
+  })], 1)], 1)
 }
-var staticRenderFns = []
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "avatar"
+  }, [_c('img', {
+    attrs: {
+      "src": "/static/images/pic_12.png",
+      "mode": "widthFix"
+    }
+  })])
+},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dynamic-content"
+  }, [_c('div', {
+    staticClass: "image-wrap flex flex-row single"
+  }, [_c('div', {
+    staticClass: "image"
+  }, [_c('img', {
+    attrs: {
+      "src": "/static/images/discovery_03.png",
+      "mode": "widthFix"
+    }
+  })])]), _vm._v(" "), _c('div', {
+    staticClass: "text-wrap"
+  }, [_vm._v("今天米修被我领回家啦！一只双子座的狗狗哦！刚满月几天。")])])
+},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "like-comment-share flex flex-row"
+  }, [_c('div', {
+    staticClass: "praise liked"
+  }, [_c('span', {
+    staticClass: "icon"
+  }), _vm._v(" "), _c('span', {
+    staticClass: "number"
+  }, [_vm._v("116")])]), _vm._v(" "), _c('div', {
+    staticClass: "comment"
+  }, [_c('span', {
+    staticClass: "icon"
+  }), _vm._v(" "), _c('span', {
+    staticClass: "number"
+  }, [_vm._v("18")])]), _vm._v(" "), _c('div', {
+    staticClass: "share"
+  }, [_c('span', {
+    staticClass: "icon"
+  })])])
+}]
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);

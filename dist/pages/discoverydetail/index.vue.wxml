@@ -1,8 +1,48 @@
 <import src="../../components/header.vue.wxml" />
 <import src="../../components/commentitem.vue.wxml" />
 <template name="794e183d">
-  <view class="_div data-v-7b2c951c container index">
+  <view class="_div data-v-7b2c951c container discoverydetail">
     <template title="动态详情" align="center" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
-    <template data="{{...$root[$kk+'1'], $root}}" is="77f7d2fe"></template>
+    <view class="_div data-v-7b2c951c dynamic-detail">
+      <view class="_div data-v-7b2c951c user-line flex flex-row">
+        <view class="_div data-v-7b2c951c avatar">
+          <image src="/static/images/pic_12.png" mode="widthFix" class="_img data-v-7b2c951c"></image>
+        </view>
+        <view class="_div data-v-7b2c951c flex1 user-name">
+          <view class="_p data-v-7b2c951c name">李先生 | 米粒儿</view>
+          <view class="_p data-v-7b2c951c signature">吃葡萄不吐葡萄皮儿</view>
+        </view>
+      </view>
+      <view class="_div data-v-7b2c951c dynamic-content">
+        <view class="_div data-v-7b2c951c image-wrap flex flex-row single">
+          <view class="_div data-v-7b2c951c image">
+            <image src="/static/images/discovery_03.png" mode="widthFix" class="_img data-v-7b2c951c"></image>
+          </view>
+        </view>
+        <view class="_div data-v-7b2c951c text-wrap">今天米修被我领回家啦！一只双子座的狗狗哦！刚满月几天。</view>
+      </view>
+      <view class="_div data-v-7b2c951c like-comment-share flex flex-row">
+        <view class="_div data-v-7b2c951c praise liked">
+          <label class="_span data-v-7b2c951c icon"></label>
+          <label class="_span data-v-7b2c951c number">116</label>
+        </view>
+        <view class="_div data-v-7b2c951c comment">
+          <label class="_span data-v-7b2c951c icon"></label>
+          <label class="_span data-v-7b2c951c number">18</label>
+        </view>
+        <view class="_div data-v-7b2c951c share">
+          <label class="_span data-v-7b2c951c icon"></label>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-7b2c951c comment-list">
+      <view class="_p data-v-7b2c951c flex flex-row title">
+        <label class="_span data-v-7b2c951c flex1">全部评论</label>
+        <label class="_span data-v-7b2c951c look-all">查看全部
+          <label class="_span data-v-7b2c951c i"></label>
+        </label>
+      </view>
+      <template data="{{...$root[$kk+'1'], $root}}" is="77f7d2fe"></template>
+    </view>
   </view>
 </template>

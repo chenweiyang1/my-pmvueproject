@@ -1,18 +1,18 @@
 <template name="77f7d2fe">
   <view class="_div data-v-37095c60 comment-item flex flex-row">
     <view class="_div data-v-37095c60 avatar">
-      <image src="/static/images/pic_06.png" mode="widthFix" class="_img data-v-37095c60"></image>
+      <image src="/static/images/pic_12.png" mode="widthFix" class="_img data-v-37095c60"></image>
     </view>
     <view class="_div data-v-37095c60 flex1 text">
       <view class="_div data-v-37095c60 user-name flex flex-row">
         <view class="_p data-v-37095c60 name flex1">米粒儿</view>
         <view class="_div data-v-37095c60 action">
-          <view class="_div data-v-37095c60 like">116</view>
-          <view class="_div data-v-37095c60 action-text">删除</view>
+          <label class="_span data-v-37095c60 like liked">116</label>
+          <label class="_span data-v-37095c60 action-text">删除</label>
         </view>
       </view>
       <view class="_p data-v-37095c60 time">3min前</view>
-      <view class="_p data-v-37095c60 comment-content">从姐姐那儿带过来的，不是买的哦</view>
+      <view class="_p data-v-37095c60 comment-content">从姐姐那儿带过来的，不是买的哦儿带过来的，不是买的哦儿带过来的，不是买的哦儿带过来的，不是买的哦儿带过来的，不是买的哦</view>
       <view class="_div data-v-37095c60 reply-list">
         <view class="_p data-v-37095c60 reply-item">
           <label class="_span data-v-37095c60 name">七彩儿: </label>
@@ -24,7 +24,9 @@
             <label class="_span data-v-37095c60 content">这么巧，我的也是哦~</label>
           </view>
         </view>
-        <view class="_p data-v-37095c60 toggle-told">共10条回复 ></view>
+        <view class="_p data-v-37095c60 toggle-told">共10条回复
+          <label class="_span data-v-37095c60 i"></label>
+        </view>
       </view>
     </view>
   </view>
