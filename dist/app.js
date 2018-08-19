@@ -2,7 +2,7 @@ require("common/manifest.js");
 require("common/vendor.js");
 global.webpackJsonp([9],{
 
-/***/ 41:
+/***/ 42:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21,5 +21,5 @@ app.$mount();
 
 /***/ })
 
-},[41]);
+},[42]);
 //# sourceMappingURL=app.js.map

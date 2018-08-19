@@ -55,7 +55,7 @@
 <script>
 import petStatus from '@/components/petStatus'
 import header from '../../components/header'
-import { host_dev } from '../../utils/base'
+import { ajax } from '../../utils/base'
 import app from '../../App'
 export default {
   data () {
@@ -80,14 +80,31 @@ export default {
     swiperChange(e) {
       this.swiperIndex = e.target.current;
       // console.log(e)
+    },
+    getPetList(session){  //   获取单身宠物列表   session参数是通过store获取 
+    console.log(session)
+      ajax('/wx/petinfo/pet_list','GET',{session: session}).then(res=>{
+        console.log(res);
+      }).catch(err=>{
+        console.log(err);
+      });
+    },
+    getPetPair(session){    //  匹配
+      ajax('/wx/petinfo/pair','GET',{session: session, pet_id: 1}).then(res=>{
+        console.log(res);
+      }).catch(err=>{
+        console.log(err);
+      });
     }
   },
 
   beforeMount () {
     console.log(app)
-    app.login().then((res) => {
+    app.login().then((res) => { //  登录
       // wx.setStorageSync('sessionId', sessionId);
-      console.log(res)
+      console.log(res);
+      this.getPetList(res);
+      this.getPetPair(res);
     }).catch((err) => {
       console.log(err)
     });

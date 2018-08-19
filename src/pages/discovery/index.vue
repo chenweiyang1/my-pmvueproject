@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="list">
-      <div class="list-card">
+      <div class="list-card" v-for="(item, key) in listData" :key="key">
         <div class="user flex flex-row">
           <div class="avatar">
             <img src="/static/images/pic_12.png" mode="widthFix" />
@@ -142,7 +142,7 @@
 
 <script>
 import header from '@/components/header'
-import { host_dev } from '../../utils/base'
+import { ajax } from '../../utils/base'
 export default {
   data () {
     return {
@@ -158,6 +158,13 @@ export default {
     this.getData();
   },
   methods:{
+    getDynamicDetial(){  //  获取动态详情
+      ajax('/wx/dynamic/dynamicInfo','GET',{dynamicId: 52}).then(res=>{
+        console.log(res)
+      }).catch(err=>{
+        console.log(err);
+      })
+    },
     toDetail(id){
       wx.navigateTo({ url:'../discoverydetail/main' });
     },
@@ -167,24 +174,24 @@ export default {
     },
     getData(restetPage){
       if(restetPage){this.page=1;}
-      wx.request({
-          url:`${host_dev}/wx/dynamic`,
-          method: 'GET',
-          data: {
-              session: wx.getStorageSync('sessionId'),
-              pageNumber: this.page,
-              pageSize: 10,
-          },
-          success: res =>{
-              console.log(res);
-              if(restetPage){this.listData = [];}
-              this.listData.concat(res.data.data.list);
-          }
+      ajax('/wx/dynamic','GET',{session: wx.getStorageSync('sessionId'),pageNumber: this.page, pageSize: 10,})
+      .then(res=>{
+        console.error(res);
+        for (let i = 0; i < res.data.list.length; i++) {
+          res.data.list[i].imgs = JSON.parse(res.data.list[i].imgs);
+        }
+        console.log(res.data.list)
+        if(restetPage){this.listData = [];}
+        this.listData.concat(res.data.list);
+        this.getDynamicDetial();
+      })
+      .catch(err=>{
+
       });
     }
   },
   onReachBottom(){
-    this.page++;
+    // this.page++;
     this.getData(false);
   }
 }

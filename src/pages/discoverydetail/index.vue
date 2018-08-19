@@ -36,9 +36,17 @@
     <div class="comment-list">
       <p class="flex flex-row title">
         <span class="flex1">全部评论</span>
-        <span class="look-all">查看全部<span class="i"></span></span>
+        <span class="look-all" @click="toAllComment">查看全部<span class="i"></span></span>
       </p>
-      <comment />
+      <comment :fold="true" />
+    </div>
+    <div class="input-box flex flex-row">
+      <span class="to-home"></span>
+      <div class="input">
+        <input type="text" @confirm="send" placeholder="我也说几句..." v-model="mycommemt"/>
+      </div>
+      <span class="like"></span>
+      <span class="share"></span>
     </div>
   </div>
 </template>
@@ -50,7 +58,7 @@ import { host_dev } from '../../utils/base'
 export default {
   data () {
     return {
-      
+      mycommemt: ''
     }
   },
 
@@ -60,7 +68,13 @@ export default {
   },
 
   methods: {
-
+    send(e){
+      console.log(e)
+      console.log(this.mycommemt)
+    },
+    toAllComment(){
+      wx.navigateTo({ url:'../commentdetail/main' });
+    }
   },
 
   beforeMount () {
@@ -71,6 +85,7 @@ export default {
 
 <style lang="scss">
 .discoverydetail{
+  padding-bottom: 110rpx;
   .dynamic-detail{
     width: 100%;
     padding: 24rpx;
@@ -223,6 +238,8 @@ export default {
           background-size: 14rpx auto;
           background-image: url(../../icons/arrow_right.png);
           vertical-align: bottom;
+          position: relative;
+          top: 3rpx;
         }
       }
       &:after{
@@ -235,6 +252,60 @@ export default {
         left: 24rpx;
         bottom: 1rpx;
       }
+    }
+  }
+  .input-box{
+    width: 100%;
+    height: 110rpx;
+    padding-right: 10rpx;
+    box-shadow: 0px -6px 8px 0px rgba(8,8,8,0.04);
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    .to-home{
+      flex: 0 0 100rpx;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 45rpx auto;
+      height: 100%;
+      // background-image: url();
+    }
+    .input{
+      flex: 1;
+      height: 100%;
+      margin-right: 5rpx;
+      padding: 20rpx;
+      input{
+        width: 100%;
+        height: 100%;
+        border: none;
+        background-color: #eee;
+        border-radius: 4rpx;
+        padding: 0 10rpx;
+        font-size: 30rpx;
+        color: #1E1E1E;
+      }
+    }
+    .like{
+      flex: 0 0 80rpx;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: 43rpx auto;
+      background-position: center;
+      background-image: url(../../icons/discovery_like.png);
+      transition: all 0.3s;
+      &.liked{
+        background-image: url(../../icons/discovery_liked.png);
+      }
+    }
+    .share{
+      flex: 0 0 80rpx;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: 34rpx auto;
+      background-position: center;
+      background-image: url(../../icons/discovery_share.png);
     }
   }
 }

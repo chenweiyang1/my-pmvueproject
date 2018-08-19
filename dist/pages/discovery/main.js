@@ -177,6 +177,14 @@ global.webpackJsonp([7],{
   },
 
   methods: {
+    getDynamicDetial: function getDynamicDetial() {
+      //  获取动态详情
+      Object(__WEBPACK_IMPORTED_MODULE_1__utils_base__["a" /* ajax */])('/wx/dynamic/dynamicInfo', 'GET', { dynamicId: 52 }).then(function (res) {
+        console.log(res);
+      }).catch(function (err) {
+        console.log(err);
+      });
+    },
     toDetail: function toDetail(id) {
       wx.navigateTo({ url: '../discoverydetail/main' });
     },
@@ -190,26 +198,22 @@ global.webpackJsonp([7],{
       if (restetPage) {
         this.page = 1;
       }
-      wx.request({
-        url: __WEBPACK_IMPORTED_MODULE_1__utils_base__["a" /* host_dev */] + '/wx/dynamic',
-        method: 'GET',
-        data: {
-          session: wx.getStorageSync('sessionId'),
-          pageNumber: this.page,
-          pageSize: 10
-        },
-        success: function success(res) {
-          console.log(res);
-          if (restetPage) {
-            _this.listData = [];
-          }
-          _this.listData.concat(res.data.data.list);
+      Object(__WEBPACK_IMPORTED_MODULE_1__utils_base__["a" /* ajax */])('/wx/dynamic', 'GET', { session: wx.getStorageSync('sessionId'), pageNumber: this.page, pageSize: 10 }).then(function (res) {
+        console.error(res);
+        for (var i = 0; i < res.data.list.length; i++) {
+          res.data.list[i].imgs = JSON.parse(res.data.list[i].imgs);
         }
-      });
+        console.log(res.data.list);
+        if (restetPage) {
+          _this.listData = [];
+        }
+        _this.listData.concat(res.data.list);
+        _this.getDynamicDetial();
+      }).catch(function (err) {});
     }
   },
   onReachBottom: function onReachBottom() {
-    this.page++;
+    // this.page++;
     this.getData(false);
   }
 });
@@ -259,33 +263,36 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }
   }, [_vm._v("关注")])])]), _vm._v(" "), _c('div', {
     staticClass: "list"
-  }, [_c('div', {
-    staticClass: "list-card"
-  }, [_c('div', {
-    staticClass: "user flex flex-row"
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
-    staticClass: "user-info flex1"
-  }, [_c('p', {
-    staticClass: "user-name"
-  }, [_c('span', {
-    staticClass: "owner-name"
-  }, [_vm._v("李小七/")]), _vm._v(" "), _c('span', {
-    staticClass: "pet-name"
-  }, [_vm._v("米粒儿")])]), _vm._v(" "), _c('p', {
-    staticClass: "signature"
-  }, [_vm._v("吃葡萄不吐葡萄皮儿")])], 1), _vm._v(" "), _vm._m(1)]), _vm._v(" "), _c('div', {
-    staticClass: "card-content"
-  }, [_vm._m(2), _vm._v(" "), _c('div', {
-    staticClass: "text-wrap",
-    attrs: {
-      "eventid": '2'
-    },
-    on: {
-      "click": function($event) {
-        _vm.toDetail(1)
+  }, [_vm._l((_vm.listData), function(item, key) {
+    return _c('div', {
+      key: key,
+      staticClass: "list-card"
+    }, [_c('div', {
+      staticClass: "user flex flex-row"
+    }, [_vm._m(0, true), _vm._v(" "), _c('div', {
+      staticClass: "user-info flex1"
+    }, [_c('p', {
+      staticClass: "user-name"
+    }, [_c('span', {
+      staticClass: "owner-name"
+    }, [_vm._v("李小七/")]), _vm._v(" "), _c('span', {
+      staticClass: "pet-name"
+    }, [_vm._v("米粒儿")])]), _vm._v(" "), _c('p', {
+      staticClass: "signature"
+    }, [_vm._v("吃葡萄不吐葡萄皮儿")])], 1), _vm._v(" "), _vm._m(1, true)]), _vm._v(" "), _c('div', {
+      staticClass: "card-content"
+    }, [_vm._m(2, true), _vm._v(" "), _c('div', {
+      staticClass: "text-wrap",
+      attrs: {
+        "eventid": '2-' + key
+      },
+      on: {
+        "click": function($event) {
+          _vm.toDetail(1)
+        }
       }
-    }
-  }, [_vm._v("今天米修被我领回家啦！一只双子座的狗狗哦！刚满月几天。")])]), _vm._v(" "), _vm._m(3)]), _vm._v(" "), _c('div', {
+    }, [_vm._v("今天米修被我领回家啦！一只双子座的狗狗哦！刚满月几天。")])]), _vm._v(" "), _vm._m(3, true)])
+  }), _vm._v(" "), _c('div', {
     staticClass: "list-card"
   }, [_c('div', {
     staticClass: "user flex flex-row"
@@ -313,7 +320,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "pet-name"
   }, [_vm._v("米粒儿")])]), _vm._v(" "), _c('p', {
     staticClass: "signature"
-  }, [_vm._v("吃葡萄不吐葡萄皮儿")])], 1), _vm._v(" "), _vm._m(9)]), _vm._v(" "), _vm._m(10), _vm._v(" "), _vm._m(11)])])], 1)
+  }, [_vm._v("吃葡萄不吐葡萄皮儿")])], 1), _vm._v(" "), _vm._m(9)]), _vm._v(" "), _vm._m(10), _vm._v(" "), _vm._m(11)])], 2)], 1)
 }
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
@@ -526,8 +533,8 @@ app.$mount();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_template_compiler_index_id_data_v_396d0a3e_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_1_1_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_1_1_1_mpvue_loader_lib_template_compiler_index_id_data_v_396d0a3e_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_1_1_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(102);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -545,8 +552,8 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_template_compiler_index_id_data_v_396d0a3e_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_1_1_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_1_1_1_mpvue_loader_lib_template_compiler_index_id_data_v_396d0a3e_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_1_1_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__

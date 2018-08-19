@@ -15,10 +15,10 @@
             <p class="comment-content">从姐姐那儿带过来的，不是买的哦儿带过来的，不是买的哦儿带过来的，不是买的哦儿带过来的，不是买的哦儿带过来的，不是买的哦</p>
             <div class="reply-list">
                 <p class="reply-item"><span class="name">七彩儿: </span><span class="content">这么巧，我的也是哦~</span></p>
-                <div class="fold">
+                <div class="fold" :class="childFold?'':'show'">
                     <p class="reply-item"><span class="name">七彩儿: </span><span class="content">这么巧，我的也是哦~</span></p>
                 </div>
-                <p class="toggle-told">共10条回复 <span class="i"></span></p>
+                <p class="toggle-told" v-if="childFold" @click="childFold=!childFold">共10条回复 <span class="i"></span></p>
             </div>
         </div>
     </div>
@@ -26,7 +26,38 @@
 
 <script>
 export default {
-    
+    props: {
+        fold: Boolean,
+    // // 多种类型
+    // propB: [String, Number],
+    // // 必传且是字符串
+    // propC: {
+    //   type: String,
+    //   required: true
+    // },
+    // // 数字，有默认值
+    // propD: {
+    //   type: Number,
+    //   default: 100
+    // },
+    // // 数组/对象的默认值应当由一个工厂函数返回
+    // propE: {
+    //   type: Object,
+    //   default: function () {
+    //     return { message: 'hello' }
+    //   }
+    // },
+    // // 自定义验证函数
+    // propF: {
+    //   validator: function (value) {
+    //     return value > 10
+    //   }
+    },
+    data(){
+        return{
+            childFold: this.fold
+        }
+    }
 }
 </script>
 
@@ -120,6 +151,8 @@ export default {
                     background-position: right center;
                     background-size: 14rpx auto;
                     vertical-align: bottom;
+                    position: relative;
+                    top: 3rpx;
                 }
             }
         }

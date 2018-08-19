@@ -1,8 +1,8 @@
 <import src="../../components/header.vue.wxml" />
 <import src="../../components/commentitem.vue.wxml" />
-<template name="794e183d">
+<template name="d51af8da">
   <view class="_div data-v-7b2c951c container discoverydetail">
-    <template title="动态详情" align="center" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
+    <template title="动态详情" align="center" data="{{...$root[$kk+'0'], $root}}" is="3bd3e587"></template>
     <view class="_div data-v-7b2c951c dynamic-detail">
       <view class="_div data-v-7b2c951c user-line flex flex-row">
         <view class="_div data-v-7b2c951c avatar">
@@ -38,11 +38,19 @@
     <view class="_div data-v-7b2c951c comment-list">
       <view class="_p data-v-7b2c951c flex flex-row title">
         <label class="_span data-v-7b2c951c flex1">全部评论</label>
-        <label class="_span data-v-7b2c951c look-all">查看全部
+        <label class="_span data-v-7b2c951c look-all" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">查看全部
           <label class="_span data-v-7b2c951c i"></label>
         </label>
       </view>
-      <template data="{{...$root[$kk+'1'], $root}}" is="77f7d2fe"></template>
+      <template data="{{...$root[$kk+'1'], $root}}" is="b571ac30"></template>
+    </view>
+    <view class="_div data-v-7b2c951c input-box flex flex-row">
+      <label class="_span data-v-7b2c951c to-home"></label>
+      <view class="_div data-v-7b2c951c input">
+        <input type="text" bindconfirm="handleProxy" placeholder="我也说几句..." value="{{mycommemt}}" bindinput="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_input data-v-7b2c951c" />
+      </view>
+      <label class="_span data-v-7b2c951c like"></label>
+      <label class="_span data-v-7b2c951c share"></label>
     </view>
   </view>
 </template>

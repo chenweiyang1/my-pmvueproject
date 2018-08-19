@@ -1,4 +1,4 @@
-<template name="77f7d2fe">
+<template name="b571ac30">
   <view class="_div data-v-37095c60 comment-item flex flex-row">
     <view class="_div data-v-37095c60 avatar">
       <image src="/static/images/pic_12.png" mode="widthFix" class="_img data-v-37095c60"></image>
@@ -18,13 +18,13 @@
           <label class="_span data-v-37095c60 name">七彩儿: </label>
           <label class="_span data-v-37095c60 content">这么巧，我的也是哦~</label>
         </view>
-        <view class="_div data-v-37095c60 fold">
+        <view class="_div data-v-37095c60 fold {{childFold ? '' : 'show'}}">
           <view class="_p data-v-37095c60 reply-item">
             <label class="_span data-v-37095c60 name">七彩儿: </label>
             <label class="_span data-v-37095c60 content">这么巧，我的也是哦~</label>
           </view>
         </view>
-        <view class="_p data-v-37095c60 toggle-told">共10条回复
+        <view class="_p data-v-37095c60 toggle-told" wx:if="{{childFold}}" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">共10条回复
           <label class="_span data-v-37095c60 i"></label>
         </view>
       </view>

@@ -173,6 +173,8 @@ page {
   background-position: right center;
   background-size: 14rpx auto;
   vertical-align: bottom;
+  position: relative;
+  top: 3rpx;
 }
 .comment-item:after {
   content: '';

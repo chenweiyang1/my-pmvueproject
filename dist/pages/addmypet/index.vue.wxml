@@ -1,7 +1,7 @@
 <import src="../../components/header.vue.wxml" />
-<template name="aed7ae5c">
+<template name="30c0323c">
   <view class="_div data-v-1964d892 container add-my-pet">
-    <template title="添加宠物" align="center" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
+    <template title="添加宠物" align="center" data="{{...$root[$kk+'0'], $root}}" is="3bd3e587"></template>
     <view class="_div data-v-1964d892 add-card">
       <view bindtap="handleProxy" class="_div data-v-1964d892 big-img {{pic1 == '' ? '' : 'has-img'}}" data-eventid="{{'0'}}" data-comkey="{{$k}}">
         <image mode="widthFix" wx:if="{{pic1!=''}}" src="{{pic1}}" class="_image data-v-1964d892"></image>

@@ -22,8 +22,8 @@ app.$mount();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_template_compiler_index_id_data_v_1964d892_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_1_1_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_1_1_1_mpvue_loader_lib_template_compiler_index_id_data_v_1964d892_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_1_1_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(89);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -41,8 +41,8 @@ var __vue_scopeId__ = "data-v-1964d892"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_template_compiler_index_id_data_v_1964d892_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_1_1_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_1_1_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_1_1_1_mpvue_loader_lib_template_compiler_index_id_data_v_1964d892_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_1_1_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
@@ -162,7 +162,7 @@ if (false) {(function () {
     },
     beforeMount: function beforeMount() {
         wx.request({
-            url: __WEBPACK_IMPORTED_MODULE_2__utils_base__["a" /* host_dev */] + '/wx/user/',
+            url: __WEBPACK_IMPORTED_MODULE_2__utils_base__["b" /* host_dev */] + '/wx/user/',
             method: 'GET',
             data: {
                 // signature: res.signature,
@@ -209,7 +209,7 @@ if (false) {(function () {
                             break;
                     }
                     wx.uploadFile({
-                        url: __WEBPACK_IMPORTED_MODULE_2__utils_base__["a" /* host_dev */] + '/wx/petinfo/uploadimg',
+                        url: __WEBPACK_IMPORTED_MODULE_2__utils_base__["b" /* host_dev */] + '/wx/petinfo/uploadimg',
                         filePath: tempFilePaths[0],
                         name: 'file',
                         success: function success(res) {

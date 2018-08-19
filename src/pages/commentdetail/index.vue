@@ -1,7 +1,7 @@
 <template>
-    <div class="comment-detail">
+    <div class="container comment-detail">
         <v-header title="全部评论" align="center" :showBack="true"></v-header>
-        <v-comment></v-comment>
+        <v-comment :fold="false"></v-comment>
     </div>
 </template>
 
