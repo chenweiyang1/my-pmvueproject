@@ -5,7 +5,8 @@ text,
 ._textarea,
 ._button,
 ._label,
-swiper-item {
+swiper-item,
+navigator {
   font-family: "Microsoft YaHei";
   box-sizing: border-box;
 }

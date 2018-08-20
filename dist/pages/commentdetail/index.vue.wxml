@@ -1,8 +1,8 @@
 <import src="../../components/header.vue.wxml" />
 <import src="../../components/commentitem.vue.wxml" />
-<template name="f579a17c">
+<template name="7d203328">
   <view class="_div data-v-f51164be container comment-detail">
-    <template title="全部评论" align="center" data="{{...$root[$kk+'0'], $root}}" is="3bd3e587"></template>
-    <template data="{{...$root[$kk+'1'], $root}}" is="b571ac30"></template>
+    <template title="全部评论" align="center" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
+    <template data="{{...$root[$kk+'1'], $root}}" is="77f7d2fe"></template>
   </view>
 </template>

@@ -1,7 +1,7 @@
 <import src="../../components/header.vue.wxml" />
-<template name="18e02382">
+<template name="c8ea00a8">
   <view class="_div data-v-396d0a3e container discovery">
-    <template vClass="img-move-bottom" title="Ta宠" align="left" data="{{...$root[$kk+'0'], $root}}" is="3bd3e587"></template>
+    <template vClass="img-move-bottom" title="Ta宠" align="left" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
     <view class="_div data-v-396d0a3e top-tab">
       <view class="_div data-v-396d0a3e menu-wrap flex flex-row">
         <label class="_span data-v-396d0a3e items flex1 {{tabType == 1 ? 'active' : ''}}" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">精选</label>

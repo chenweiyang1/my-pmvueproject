@@ -52,7 +52,7 @@ export default {
 
 <style>
 view,text,input,textarea,button,
-label,swiper-item{
+label,swiper-item,navigator{
   font-family: "Microsoft YaHei";
   box-sizing: border-box;
 }

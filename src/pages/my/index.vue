@@ -23,11 +23,11 @@
                 <p class="flex1">常见问题</p>
                 <span class="arrow-right"></span>
             </div>
-            <div class="item flex flex-row feedback">
+            <a href="../feedback/main" class="item flex flex-row feedback">
                 <span class="icon"></span>
                 <p class="flex1">意见反馈</p>
                 <span class="arrow-right"></span>
-            </div>
+            </a>
             <div class="item flex flex-row meal-card-mall">
                 <span class="icon"></span>
                 <p class="flex1">蹭饭卡商城 <span>即将出锅</span></p>

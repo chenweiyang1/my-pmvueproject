@@ -1,8 +1,8 @@
 <import src="../../components/header.vue.wxml" />
 <import src="../../components/commentitem.vue.wxml" />
-<template name="d51af8da">
+<template name="794e183d">
   <view class="_div data-v-7b2c951c container discoverydetail">
-    <template title="动态详情" align="center" data="{{...$root[$kk+'0'], $root}}" is="3bd3e587"></template>
+    <template title="动态详情" align="center" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
     <view class="_div data-v-7b2c951c dynamic-detail">
       <view class="_div data-v-7b2c951c user-line flex flex-row">
         <view class="_div data-v-7b2c951c avatar">
@@ -42,7 +42,7 @@
           <label class="_span data-v-7b2c951c i"></label>
         </label>
       </view>
-      <template data="{{...$root[$kk+'1'], $root}}" is="b571ac30"></template>
+      <template data="{{...$root[$kk+'1'], $root}}" is="77f7d2fe"></template>
     </view>
     <view class="_div data-v-7b2c951c input-box flex flex-row">
       <label class="_span data-v-7b2c951c to-home"></label>

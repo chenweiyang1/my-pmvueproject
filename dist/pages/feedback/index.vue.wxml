@@ -1,0 +1,6 @@
+<import src="../../components/header.vue.wxml" />
+<template name="0e2afeb6">
+  <view class="_div data-v-43a3eb8a container feedback">
+    <template title="意见反馈" align="center" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
+  </view>
+</template>

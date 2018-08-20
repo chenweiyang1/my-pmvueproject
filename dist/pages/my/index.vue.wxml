@@ -1,7 +1,7 @@
 <import src="../../components/header.vue.wxml" />
-<template name="478e8476">
+<template name="50eca38c">
   <view class="_div data-v-6160f071 user-center">
-    <template title="我的" align="center" data="{{...$root[$kk+'0'], $root}}" is="3bd3e587"></template>
+    <template title="我的" align="center" data="{{...$root[$kk+'0'], $root}}" is="5bd766b1"></template>
     <view class="_div data-v-6160f071 circleback"></view>
     <view class="_div data-v-6160f071 user-card flex flex-row">
       <view class="_div data-v-6160f071 avatar">
@@ -24,11 +24,11 @@
         <view class="_p data-v-6160f071 flex1">常见问题</view>
         <label class="_span data-v-6160f071 arrow-right"></label>
       </view>
-      <view class="_div data-v-6160f071 item flex flex-row feedback">
+      <navigator url="../feedback/main" class="_a data-v-6160f071 item flex flex-row feedback">
         <label class="_span data-v-6160f071 icon"></label>
         <view class="_p data-v-6160f071 flex1">意见反馈</view>
         <label class="_span data-v-6160f071 arrow-right"></label>
-      </view>
+      </navigator>
       <view class="_div data-v-6160f071 item flex flex-row meal-card-mall">
         <label class="_span data-v-6160f071 icon"></label>
         <view class="_p data-v-6160f071 flex1">蹭饭卡商城

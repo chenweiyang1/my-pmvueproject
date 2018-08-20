@@ -1,5 +1,5 @@
 <import src="../../components/header.vue.wxml" />
-<import src="../../components/commentitem.vue.wxml" />
 <import src="../../components/header.vue.wxml" />
+<import src="../../components/commentitem.vue.wxml" />
 <import src="../../components/header.vue.wxml" />
 <import src="../../components/petStatus.vue.wxml" />
